@@ -41,50 +41,60 @@
 
 <main id="main">
 
-  <section class="section field-1 wrap" aria-labelledby="learns">
-    <div class="grid showcase__top">
-      <h2 id="learns" data-reveal>What servers learn</h2>
-      <p data-reveal style="--i:1">A light wallet asks its server for blocks and tree states. Some questions give the wallet away: its transparent addresses, its birthday, where its last sync stopped. We put a recording proxy between each wallet and its server, ran the same five scenarios, and counted the requests that identify the wallet.</p>
-    </div>
-    <div class="grid specimens">
-      <figure class="specimen" data-reveal>
-        <figcaption>ZecPy: create, sync, receive, restart, send</figcaption>
-        <div class="specimen__box"><div class="specimen__figure nums" aria-label="0 identifying requests">0</div></div>
-      </figure>
-      <figure class="specimen" data-reveal style="--i:1">
-        <figcaption>zcash-devtool, built on the same crates</figcaption>
-        <div class="specimen__box"><div class="specimen__figure nums" aria-label="7 identifying requests" data-count="7">7</div></div>
-      </figure>
+  <section class="section field-1 wrap measured" aria-labelledby="measured">
+    <div class="grid measured__grid">
+      <div class="measured__copy">
+        <h2 id="measured" class="head" data-reveal>Zero leaks, measured</h2>
+        <p data-reveal style="--i:1">A proxy between wallet and server logged every request across create, sync, receive, restart and send. These are the requests that identified the wallet.</p>
+      </div>
+      <dl class="stats">
+        <div class="stat stat--ours" data-reveal><dt>ZecPy</dt><dd class="nums" data-count="0">0</dd></div>
+        <div class="stat" data-reveal style="--i:1"><dt>zcash-devtool</dt><dd class="nums" data-count="7">7</dd></div>
+        <div class="stat" data-reveal style="--i:2"><dt>zingo-cli</dt><dd class="nums" data-count="71">71</dd></div>
+      </dl>
+      <a class="iconlink measured__link" href="docs/privacy.html" data-reveal style="--i:2"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>How it is measured</span></a>
     </div>
   </section>
 
-  <section class="footage wrap" aria-labelledby="watch">
-    <div class="grid footage__head">
-      <h2 id="watch" class="head" data-reveal>The server's side</h2>
-      <div class="footage__copy">
-        <p data-reveal style="--i:1">ZecPy Live, replaying a recorded run on a local chain: a shop checkout, an agent paying a link, a memo fetch, cold signing. Two audit proxies label every request as it arrives.</p>
+  <section class="section wrap demo" aria-labelledby="run">
+    <div class="grid demo__grid">
+      <div class="demo__copy">
+        <h2 id="run" class="head" data-reveal>See it run</h2>
+        <p data-reveal style="--i:1">ZecPy Live replays a real run on a local chain. Every request the server receives lands in the table as it arrives.</p>
         <nav class="iconrow" aria-label="Demo" data-reveal style="--i:2">
           <a class="iconlink iconlink--solid" href="docs/demo.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg><span>Run the demo</span></a>
           <a class="iconlink" href="https://github.com/xerodahdev/zecpy-demo"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg><span>zecpy-demo</span></a>
         </nav>
       </div>
+      <figure class="demo__video" data-reveal>
+        <video autoplay muted loop playsinline preload="metadata" width="1920" height="1734" poster="assets/img/zecpy-live-poster.jpg" aria-label="ZecPy Live replay: five scenes run while the request table fills">
+          <source src="assets/img/zecpy-live.mp4" type="video/mp4">
+        </video>
+      </figure>
     </div>
-    <video data-reveal autoplay muted loop playsinline preload="metadata" width="1280" height="1156" poster="assets/img/zecpy-live-poster.jpg" aria-label="ZecPy Live replay: scenes run on the left, the requests the server received fill the table on the right">
-      <source src="assets/img/zecpy-live.mp4" type="video/mp4">
-    </video>
+    <div class="grid demo__shots">
+      <figure data-reveal>
+        <img src="assets/img/memo-decoys.jpg" width="1802" height="680" alt="Sixteen transaction ids requested in two shuffled fetches of eight; two are marked Ours, fourteen Decoy">
+        <figcaption>Memo fetch: 2 real transactions hidden among 16.</figcaption>
+      </figure>
+      <figure data-reveal style="--i:1">
+        <img src="assets/img/cold-signer.jpg" width="884" height="1122" alt="The offline signer's summary: spends 0.01 ZEC, pays 0.002 ZEC, 0.0079 ZEC change, fee 0.0001 ZEC">
+        <figcaption>Cold signer: checks change against its own key.</figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="section wrap proof" aria-labelledby="every">
-    <div class="grid">
-      <h2 id="every" class="head" data-reveal>Every request, <span class="indent">as it arrived</span></h2>
-      <p class="proof__intro" data-reveal style="--i:1">The proxy's own record from the privacy report, unedited. Pick a wallet and read what its server was told. Lines in gold tie a request to this wallet.</p>
+    <div class="grid section__head">
+      <h2 id="every" class="head" data-reveal>Read the server's log</h2>
+      <p data-reveal style="--i:1">The audit's raw record. Pick a wallet; gold rows identify it.</p>
     </div>
     <div class="wallets" role="group" aria-label="Wallet">
-      <button type="button" data-wallet="ZecPy" aria-pressed="false"><span class="name">ZecPy</span><span class="count nums">0 of 21 identifying</span></button>
-      <button type="button" data-wallet="zcash-devtool" aria-pressed="true"><span class="name">zcash-devtool</span><span class="count nums">7 of 24 identifying</span></button>
-      <button type="button" data-wallet="zingo-cli" aria-pressed="false"><span class="name">zingo-cli</span><span class="count nums">71 of 104 identifying</span></button>
+      <button type="button" data-wallet="ZecPy" aria-pressed="false"><span class="name">ZecPy</span><span class="count nums">0 of 21</span></button>
+      <button type="button" data-wallet="zcash-devtool" aria-pressed="true"><span class="name">zcash-devtool</span><span class="count nums">7 of 24</span></button>
+      <button type="button" data-wallet="zingo-cli" aria-pressed="false"><span class="name">zingo-cli</span><span class="count nums">71 of 104</span></button>
     </div>
-    <div class="log-wrap" tabindex="0" aria-label="Requests received by the light server">
+    <div class="log-wrap" aria-label="Requests received by the light server">
       <table class="log">
         <thead><tr><th scope="col" class="scenario">Scenario</th><th scope="col" class="method">Request</th><th scope="col" class="learn">What it asks for</th><th scope="col" class="label">Server learns</th></tr></thead>
         <tbody id="log-body">
@@ -93,77 +103,52 @@
       </table>
     </div>
     <button class="iconlink log-more" type="button" id="log-more" hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg><span>Show every request</span></button>
-    <p class="log-summary" id="log-summary" aria-live="polite">zcash-devtool: <strong>7 identifying</strong> of 24 requests across the same five scenarios.</p>
+    <p class="log-summary" id="log-summary" aria-live="polite">zcash-devtool: <strong>7 identifying</strong> of 24 requests.</p>
   </section>
 
-  <section class="commands wrap" aria-labelledby="api">
-    <div class="grid commands__head">
-      <h2 id="api" class="head" data-reveal>The whole API</h2>
-      <p data-reveal style="--i:1">The whole surface fits on one screen. Everything that touches the network is async; every amount is an integer of zatoshis.</p>
+  <section class="section wrap api" aria-labelledby="api">
+    <div class="grid section__head">
+      <h2 id="api" class="head" data-reveal>A small API</h2>
+      <p data-reveal style="--i:1">Async where it touches the network. Amounts are integer zatoshis.</p>
     </div>
-    <div class="palette" data-ui data-reveal>
-      <label class="sr-only" for="cmd-search">Find a call</label>
-      <input class="palette__search" id="cmd-search" type="search" placeholder="Find a call" autocomplete="off" role="combobox" aria-controls="cmd-list" aria-expanded="true" aria-activedescendant="cmd-invoices">
-      <div class="palette__list" id="cmd-list" role="listbox" aria-label="ZecPy calls">
-        <div class="cmd" role="option" id="cmd-invoices" aria-selected="true">
-          <div class="cmd__name">invoices.create</div>
-          <div class="cmd__more"><p>Each invoice gets its own diversified shielded address. Payments match during local trial decryption: no memo, no question to the server.</p><pre><code>invoice = wallet.invoices.create(150_000, "order-77")</code></pre></div>
-        </div>
-        <div class="cmd" role="option" id="cmd-watch" aria-selected="false">
-          <div class="cmd__name">invoices.watch</div>
-          <div class="cmd__more"><p>Yields <code>detected</code>, <code>confirmed</code> and <code>reverted</code> events. The last state is persisted, so a restart never delivers a payment twice.</p><pre><code>async for event in wallet.invoices.watch(confirmations=3): ...</code></pre></div>
-        </div>
-        <div class="cmd" role="option" id="cmd-send-many" aria-selected="false">
-          <div class="cmd__name">send_many</div>
-          <div class="cmd__more"><p>Up to 50 recipients in one shielded transaction, proved and signed on your machine. A transparent recipient raises <code>PrivacyError</code>.</p><pre><code>txid = await wallet.send_many([(addr, 125_000_000, "October")])</code></pre></div>
-        </div>
-        <div class="cmd" role="option" id="cmd-propose" aria-selected="false">
-          <div class="cmd__name">propose</div>
-          <div class="cmd__more"><p>The fee, the notes spent, the change, and any amount a pool crossing would make public, before anything is built. Send exactly that with <code>send_proposal</code>.</p><pre><code>plan = wallet.propose(addr, 50_000); print(plan.fee, plan.crossing_value)</code></pre></div>
-        </div>
-        <div class="cmd" role="option" id="cmd-pay" aria-selected="false">
-          <div class="cmd__name">pay</div>
-          <div class="cmd__more"><p>Pays a ZIP-321 link within a budget. A link asking for more than <code>max_zat</code>, or for no amount, is refused whole: an agent cannot be talked past it.</p><pre><code>txid = await wallet.pay(uri, max_zat=200_000)</code></pre></div>
-        </div>
-        <div class="cmd" role="option" id="cmd-cold" aria-selected="false">
-          <div class="cmd__name">propose_cold</div>
-          <div class="cmd__more"><p>The server holds a viewing key only. It builds and proves a PCZT; the offline <code>zecpy-cold</code> signer shows what will leave and signs.</p><pre><code>pczt = wallet.propose_cold(addr, 50_000)</code></pre></div>
-        </div>
-        <div class="cmd" role="option" id="cmd-memos" aria-selected="false">
-          <div class="cmd__name">fetch_memos</div>
-          <div class="cmd__more"><p>Opt-in. Each real transaction is fetched among 7 decoys from nearby blocks, its rank in the set uniform, on a Tor circuit of its own.</p><pre><code>report = await wallet.fetch_memos(decoys=7)</code></pre></div>
-        </div>
-        <div class="cmd" role="option" id="cmd-history" aria-selected="false">
-          <div class="cmd__name">transactions</div>
-          <div class="cmd__more"><p>History from the local database only. Listing it sends nothing to the server.</p><pre><code>for tx in wallet.transactions(): print(tx.txid, tx.net_value)</code></pre></div>
-        </div>
+    <div class="api__box" data-ui data-reveal>
+      <div class="api__tabs" role="tablist" aria-label="ZecPy calls" aria-orientation="vertical">
+        <button class="api__tab" type="button" role="tab" id="tab-0" aria-controls="api-panel" aria-selected="true" tabindex="0" data-desc="Each invoice gets its own shielded address. Payments match on your machine: no memo, no lookup." data-code="invoice = wallet.invoices.create(150_000, &quot;order-77&quot;)"><code>invoices.create</code></button>
+        <button class="api__tab" type="button" role="tab" id="tab-1" aria-controls="api-panel" aria-selected="false" tabindex="-1" data-desc="Detected, confirmed and reverted events, delivered once each, even across restarts." data-code="async for event in wallet.invoices.watch(confirmations=3): ..."><code>invoices.watch</code></button>
+        <button class="api__tab" type="button" role="tab" id="tab-2" aria-controls="api-panel" aria-selected="false" tabindex="-1" data-desc="Up to 50 recipients in one shielded transaction, proved and signed locally." data-code="txid = await wallet.send_many([(addr, 125_000_000, &quot;October&quot;)])"><code>send_many</code></button>
+        <button class="api__tab" type="button" role="tab" id="tab-3" aria-controls="api-panel" aria-selected="false" tabindex="-1" data-desc="See the fee, the notes spent and the change before anything is built." data-code="plan = wallet.propose(addr, 50_000)&#10;txid = await wallet.send_proposal(plan)"><code>propose</code></button>
+        <button class="api__tab" type="button" role="tab" id="tab-4" aria-controls="api-panel" aria-selected="false" tabindex="-1" data-desc="Pays a ZIP-321 link inside a budget. Anything over max_zat is refused whole." data-code="txid = await wallet.pay(uri, max_zat=200_000)"><code>pay</code></button>
+        <button class="api__tab" type="button" role="tab" id="tab-5" aria-controls="api-panel" aria-selected="false" tabindex="-1" data-desc="The server holds a viewing key only. An offline signer signs." data-code="pczt = wallet.propose_cold(addr, 50_000)"><code>propose_cold</code></button>
+        <button class="api__tab" type="button" role="tab" id="tab-6" aria-controls="api-panel" aria-selected="false" tabindex="-1" data-desc="Opt-in. Each real transaction is fetched among 7 decoys, over Tor." data-code="report = await wallet.fetch_memos(decoys=7)"><code>fetch_memos</code></button>
+        <button class="api__tab" type="button" role="tab" id="tab-7" aria-controls="api-panel" aria-selected="false" tabindex="-1" data-desc="History from the local database. Listing it sends nothing." data-code="for tx in wallet.transactions(): ..."><code>transactions</code></button>
       </div>
-      <p class="palette__empty" id="cmd-empty" hidden>No call by that name. Try invoices, send, pay or memos.</p>
+      <div class="api__panel" id="api-panel" role="tabpanel" aria-labelledby="tab-0" aria-live="polite">
+        <p class="api__name"><code id="api-name">invoices.create</code></p>
+        <p class="api__desc" id="api-desc">Each invoice gets its own shielded address. Payments match on your machine: no memo, no lookup.</p>
+        <pre class="code"><code id="api-code">invoice = wallet.invoices.create(150_000, &quot;order-77&quot;)</code></pre>
+        <a class="iconlink" href="docs/api.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><span>Full API reference</span></a>
+      </div>
     </div>
   </section>
 
-  <section class="section wrap pictures" aria-labelledby="seen">
-    <div class="grid pictures__head">
-      <h2 id="seen" class="head" data-reveal>Two refusals, on screen</h2>
-      <p data-reveal style="--i:1">Both from the same recorded run. The server never sees which transactions are ours, and the signer never takes the server's word for what is change.</p>
-    </div>
-    <div class="grid pictures__pair">
-      <figure>
-        <div class="shot" data-reveal><img src="assets/img/memo-decoys.jpg" width="1802" height="680" alt="Sixteen transaction ids requested in two shuffled fetches of eight; two are marked Ours, fourteen Decoy"></div>
-        <figcaption>A memo fetch as the server saw it: 16 transactions in two fetches of 8. The marks come from the wallet's own records; the server got none.</figcaption>
-      </figure>
-      <figure>
-        <div class="shot" data-reveal style="--i:1"><img src="assets/img/cold-signer.jpg" width="884" height="1122" alt="Cold signing steps, ending with the signer's summary: spends 0.01 ZEC, pays 0.002 ZEC, 0.0079 ZEC change, fee 0.0001 ZEC"></div>
-        <figcaption>The offline signer finds change with its own viewing key, then shows what really leaves.</figcaption>
-      </figure>
+  <section class="section field-1 wrap refuse" aria-labelledby="refuses">
+    <div class="grid refuse__grid">
+      <h2 id="refuses" class="head" data-reveal>What it refuses</h2>
+      <ul class="refuse__list">
+        <li data-reveal><strong>Transparent payments</strong><span>PrivacyError unless you opt in</span></li>
+        <li data-reveal style="--i:1"><strong>Direct connections</strong><span>Tor or nothing, a fresh circuit per sync and send</span></li>
+        <li data-reveal style="--i:2"><strong>Lone txid lookups</strong><span>Memos fetched among 7 decoys</span></li>
+        <li data-reveal style="--i:3"><strong>A sync trail</strong><span>Tree states at aligned heights only</span></li>
+        <li data-reveal style="--i:4"><strong>Mempool watching</strong><span>Payments are seen in blocks</span></li>
+      </ul>
     </div>
   </section>
 
   <section class="section slip-section wrap" aria-labelledby="start">
     <div class="grid">
       <div class="slip-copy">
-        <h2 id="start" data-reveal>Clone to paid</h2>
-        <p data-reveal style="--i:1">Linux, Python 3.10 or newer and a Rust toolchain. The first build compiles librustzcash, so it takes a while once.</p>
+        <h2 id="start" class="head" data-reveal>Clone to paid</h2>
+        <p data-reveal style="--i:1">Linux, Python 3.10+ and Rust. The first build compiles librustzcash once.</p>
         <pre class="code" data-reveal style="--i:2"><code><span class="k">from</span> zecpy <span class="k">import</span> Wallet
 
 wallet, mnemonic = <span class="k">await</span> Wallet.create(
@@ -177,12 +162,10 @@ invoice = wallet.invoices.create(150_000, <span class="s">"order-77"</span>)
       <div class="slip" data-reveal style="--i:1">
         <h3>Install</h3>
         <ul class="nums">
-          <li><span class="what">git clone xerodahdev/zecpy</span><span class="dots" aria-hidden="true"></span><span class="when">seconds</span></li>
           <li><span class="what">uv pip install -e .</span><span class="dots" aria-hidden="true"></span><span class="when">11 min, once</span></li>
         </ul>
         <h3>Receive</h3>
         <ul class="nums">
-          <li><span class="what">Wallet.create, over Tor</span><span class="dots" aria-hidden="true"></span><span class="when">birthday rounded</span></li>
           <li><span class="what">invoices.create</span><span class="dots" aria-hidden="true"></span><span class="when">own address</span></li>
           <li><span class="what">payment detected</span><span class="dots" aria-hidden="true"></span><span class="when">next block</span></li>
           <li><span class="what">payment confirmed</span><span class="dots" aria-hidden="true"></span><span class="when">3 blocks</span></li>
@@ -192,32 +175,21 @@ invoice = wallet.invoices.create(150_000, <span class="s">"order-77"</span>)
           <li><span class="what">prove and sign locally</span><span class="dots" aria-hidden="true"></span><span class="when">about 11 s</span></li>
           <li><span class="what">fee</span><span class="dots" aria-hidden="true"></span><span class="when">10,000 zat</span></li>
         </ul>
-        <p class="total"><span>Identifying requests sent</span><span>0</span></p>
+        <p class="total"><span>Identifying requests</span><span>0</span></p>
       </div>
     </div>
-  </section>
-
-  <section class="refuse field-1" aria-labelledby="refuses">
-    <h2 id="refuses" class="head" data-reveal>What it will not send</h2>
-    <ul class="refuse__list">
-      <li data-reveal><span class="refuse__item">no t-addrs</span><span class="refuse__fact">Transparent recipients raise PrivacyError unless you opt in</span></li>
-      <li data-reveal style="--i:1"><span class="refuse__item">no fallback</span><span class="refuse__fact">Tor or nothing: a fresh circuit for each sync and each send</span></li>
-      <li data-reveal style="--i:2"><span class="refuse__item">no lone txid</span><span class="refuse__fact">Every memo fetch hidden among 7 decoys</span></li>
-      <li data-reveal style="--i:3"><span class="refuse__item">no sync trail</span><span class="refuse__fact">Tree states at aligned heights, never where the last sync stopped</span></li>
-      <li data-reveal style="--i:4"><span class="refuse__item">no mempool</span><span class="refuse__fact">Payments are seen in blocks, never looked up by txid</span></li>
-    </ul>
   </section>
 
   <section class="section wrap agents" aria-labelledby="agent">
     <div class="grid">
       <div class="agents__copy">
-        <h2 id="agent" class="head" data-reveal>For your agent</h2>
-        <p data-reveal style="--i:1">The docs are also published as plain text for language models. <code>llms.txt</code> indexes them; <code>llms-full.txt</code> is the whole reference in one file. Paste the brief into your agent's instructions, or drop <code>AGENTS.md</code> into your repo.</p>
+        <h2 id="agent" class="head" data-reveal>Agent ready</h2>
+        <p data-reveal style="--i:1">The docs ship as plain text for models. Paste the brief, or point your agent at <code>llms.txt</code>.</p>
         <nav class="agents__links" aria-label="Agent files" data-reveal style="--i:2">
           <a class="iconlink" href="llms.txt"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 13v2M15 13v2"/></svg><span>llms.txt</span></a>
           <a class="iconlink" href="llms-full.txt"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><span>llms-full.txt</span></a>
           <a class="iconlink" href="AGENTS.md"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><span>AGENTS.md</span></a>
-          <a class="iconlink" href="docs/agents.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><span>The agent guide</span></a>
+          <a class="iconlink" href="docs/agents.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><span>Agent guide</span></a>
         </nav>
       </div>
       <div class="agents__brief" data-ui data-reveal style="--i:1">
@@ -227,22 +199,20 @@ Reference: llms-full.txt on the ZecPy website.
 
 - Network calls are async: await Wallet.create, sync, send, pay.
 - Amounts are integers in zatoshis. 1 ZEC = 100_000_000.
-- Never print, log or return the mnemonic. Call .reveal() only
-  to hand it to the storage the user chose.
+- Never print, log or return the mnemonic.
 - Take payments with wallet.invoices.create and invoices.watch.
   Match by invoice, never by memo.
 - Pay links with wallet.pay(uri, max_zat=BUDGET). Never raise
   max_zat to make a payment go through.
 - PrivacyError is a refusal, not a bug. Do not pass
-  allow_transparent or allow_pool_crossing unless the user
-  asked for exactly that.
+  allow_transparent or allow_pool_crossing unless asked.
 - Keep tor=True. Use network="test" until told otherwise.</pre>
       </div>
     </div>
   </section>
 
   <a class="cta" href="docs/quickstart.html">
-    <span class="cta__note">Install it, create a testnet wallet, take your first private payment.</span>
+    <span class="cta__note">Install it and take your first private payment.</span>
     <svg class="cta__arrow" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 36 36 12M16 12h20v20" fill="none" stroke="currentColor" stroke-width="4"/></svg>
     <span class="cta__word">Start</span>
   </a>
@@ -259,7 +229,7 @@ Reference: llms-full.txt on the ZecPy website.
     <div class="footer__cols">
       <div>
         <h2>Docs</h2>
-        <ul class="plain">
+        <ul>
           <li><a class="iconlink" href="docs/quickstart.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg><span>Quick start</span></a></li>
           <li><a class="iconlink" href="docs/accept-payments.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg><span>Guides</span></a></li>
           <li><a class="iconlink" href="docs/api.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><span>API reference</span></a></li>
@@ -267,7 +237,7 @@ Reference: llms-full.txt on the ZecPy website.
       </div>
       <div>
         <h2>Privacy</h2>
-        <ul class="plain">
+        <ul>
           <li><a class="iconlink" href="docs/privacy.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Privacy model</span></a></li>
           <li><a class="iconlink" href="https://github.com/xerodahdev/zecpy/blob/main/docs/privacy-report.md"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg><span>Privacy report</span></a></li>
           <li><a class="iconlink" href="https://github.com/xerodahdev/zecpy/tree/main/docs/upstream"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span>Upstream fixes</span></a></li>
@@ -275,7 +245,7 @@ Reference: llms-full.txt on the ZecPy website.
       </div>
       <div>
         <h2>Agents</h2>
-        <ul class="plain">
+        <ul>
           <li><a class="iconlink" href="docs/agents.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 13v2M15 13v2"/></svg><span>Agent guide</span></a></li>
           <li><a class="iconlink" href="llms-full.txt"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><span>llms-full.txt</span></a></li>
           <li><a class="iconlink" href="AGENTS.md"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><span>AGENTS.md</span></a></li>
@@ -284,7 +254,7 @@ Reference: llms-full.txt on the ZecPy website.
     </div>
   </div>
   <div class="footer__legal">
-    <p>MIT or Apache-2.0. Built for ZECATHON 2026 on librustzcash. Testnet first; no mainnet funds were moved.</p>
+    <p>MIT or Apache-2.0. Built for ZECATHON 2026 on librustzcash. No mainnet funds were moved.</p>
     <a class="iconlink" href="#main"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span>Back to top</span></a>
   </div>
 </footer>

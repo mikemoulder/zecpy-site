@@ -30,7 +30,6 @@
   const labels = { public: "Nothing", coarse: "A wide window", broadcast: "A new transaction", identifying: "This wallet" };
 
   const more = document.getElementById("log-more");
-  const phone = matchMedia("(max-width: 47.99em)");
   let current = "zcash-devtool", expanded = false;
   more.addEventListener("click", () => { expanded = true; render(current); });
 
@@ -38,10 +37,10 @@
     if (name !== current) expanded = false;
     current = name;
     const data = window.REQUESTS[name];
-    // a phone shows the first rows; the rest are one tap away
-    const rows = phone.matches && !expanded ? data.rows.slice(0, 8) : data.rows;
+    // the first rows show; the rest are one click away
+    const rows = expanded ? data.rows : data.rows.slice(0, 8);
     more.hidden = rows.length === data.rows.length;
-    more.querySelector("span").textContent = `Show all ${data.rows.length} rows`;
+    more.querySelector("span").textContent = `Show all ${data.rows.length} rows (${data.total} requests)`;
     body.textContent = "";
     let last = null;
     for (const [scenario, method, label, reason, count] of rows) {
@@ -74,44 +73,40 @@
     summary.innerHTML = "";
     const strong = document.createElement("strong");
     strong.textContent = `${data.identifying} identifying`;
-    summary.append(`${name}: `, strong, ` of ${data.total} requests across the same five scenarios.`);
+    summary.append(`${name}: `, strong, ` of ${data.total} requests.`);
     buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.wallet === name)));
-    body.parentElement.parentElement.scrollTop = 0;
   }
   buttons.forEach((b) => b.addEventListener("click", () => render(b.dataset.wallet)));
   render("zcash-devtool");
 })();
 
-// The command list: type to filter, arrows or hover to move the selection.
+// The API tabs: click or arrow keys pick a call; the panel shows what it does.
 (() => {
-  const input = document.getElementById("cmd-search");
-  const list = document.getElementById("cmd-list");
-  const empty = document.getElementById("cmd-empty");
-  if (!input || !list) return;
-  const items = [...list.querySelectorAll(".cmd")];
-  const visible = () => items.filter((el) => !el.hidden);
-  function select(el) {
-    items.forEach((i) => i.setAttribute("aria-selected", String(i === el)));
-    if (el) input.setAttribute("aria-activedescendant", el.id);
+  const tabs = [...document.querySelectorAll(".api__tab")];
+  const panel = document.getElementById("api-panel");
+  if (!tabs.length || !panel) return;
+  const name = document.getElementById("api-name");
+  const desc = document.getElementById("api-desc");
+  const code = document.getElementById("api-code");
+  function select(tab, focus) {
+    tabs.forEach((t) => { const on = t === tab; t.setAttribute("aria-selected", String(on)); t.tabIndex = on ? 0 : -1; });
+    panel.setAttribute("aria-labelledby", tab.id);
+    name.textContent = tab.textContent;
+    desc.textContent = tab.dataset.desc;
+    code.textContent = tab.dataset.code;
+    panel.classList.remove("is-swapping");
+    void panel.offsetWidth;
+    panel.classList.add("is-swapping");
+    if (focus) tab.focus();
   }
-  input.addEventListener("input", () => {
-    const q = input.value.trim().toLowerCase();
-    items.forEach((el) => { el.hidden = q !== "" && !el.textContent.toLowerCase().includes(q); });
-    const v = visible();
-    empty.hidden = v.length > 0;
-    if (!v.some((el) => el.getAttribute("aria-selected") === "true")) select(v[0] || null);
-  });
-  input.addEventListener("keydown", (e) => {
-    if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
-    e.preventDefault();
-    const v = visible();
-    const at = v.findIndex((el) => el.getAttribute("aria-selected") === "true");
-    const next = v[(at + (e.key === "ArrowDown" ? 1 : -1) + v.length) % v.length];
-    if (next) { select(next); next.scrollIntoView({ block: "nearest" }); }
-  });
-  items.forEach((el) => {
-    el.addEventListener("click", () => select(el));
-    if (matchMedia("(hover: hover) and (pointer: fine)").matches) el.addEventListener("mouseenter", () => select(el));
+  tabs.forEach((tab, i) => {
+    tab.addEventListener("click", () => select(tab));
+    tab.addEventListener("keydown", (e) => {
+      const keys = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 };
+      if (!(e.key in keys)) return;
+      e.preventDefault();
+      select(tabs[(i + keys[e.key] + tabs.length) % tabs.length], true);
+    });
   });
 })();
 
@@ -159,33 +154,16 @@ const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
     for (const e of entries) {
       if (!e.isIntersecting) continue;
       io.unobserve(e.target);
-      const to = Number(e.target.dataset.count);
-      let n = 0;
-      e.target.textContent = "0";
-      const tick = setInterval(() => { n += 1; e.target.textContent = String(n); if (n >= to) clearInterval(tick); }, 140);
+      const el = e.target, to = Number(el.dataset.count), start = performance.now();
+      if (to === 0) continue;
+      (function frame(now) {
+        const t = Math.min(1, (now - start) / 900);
+        el.textContent = String(Math.round(to * (1 - Math.pow(1 - t, 3))));
+        if (t < 1) requestAnimationFrame(frame);
+      })(start);
     }
   }, { threshold: 0.4 });
   figures.forEach((el) => io.observe(el));
-})();
-
-// The command search types its own suggestions until someone uses it.
-(() => {
-  const input = document.getElementById("cmd-search");
-  if (!input || calm) return;
-  const words = ["Find a call", "invoices", "send_many", "pay", "propose_cold", "fetch_memos"];
-  let w = 0, i = words[0].length, deleting = true, stopped = false;
-  const stop = () => { stopped = true; input.placeholder = "Find a call"; };
-  input.addEventListener("focus", stop);
-  (function step() {
-    if (stopped) return;
-    const word = words[w];
-    i += deleting ? -1 : 1;
-    input.placeholder = word.slice(0, Math.max(0, i)) || "\u200b";
-    let wait = deleting ? 45 : 90;
-    if (!deleting && i >= word.length) { deleting = true; wait = 1600; }
-    else if (deleting && i <= 0) { deleting = false; w = (w + 1) % words.length; wait = 300; }
-    setTimeout(step, wait);
-  })();
 })();
 
 // The slip prints line by line.
