@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZecPy docs</title>
+  <meta name="description" content="What ZecPy is, who it is for, and what it looks like in code.">
+  <link rel="alternate" type="text/markdown" href="index.md">
+  <link rel="describedby" type="text/plain" href="../llms.txt">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@900&family=Red+Hat+Text:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body class="docs">
+<a class="skip" href="#content">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="topbar__brand" href="../">ZecPy</a><a class="topbar__section" href="./">Docs</a>
+  <nav class="topbar__links" aria-label="Site">
+    <a class="iconlink" href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3l9 8M5 9.5V21h14V9.5"/></svg><span>Home</span></a>
+    <a class="iconlink" href="demo.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg><span>Demo</span></a>
+    <a class="iconlink" href="../llms.txt"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 13v2M15 13v2"/></svg><span>llms.txt</span></a>
+    <a class="iconlink" href="https://github.com/xerodahdev/zecpy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg><span>GitHub</span></a>
+  </nav>
+  <button class="icon-btn topbar__menu" type="button" aria-expanded="false" aria-controls="side"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menu</span></button>
+</header>
+<div class="docs__frame">
+  <aside class="side" id="side" aria-label="Docs">
+    <label class="side__search"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="sr-only">Find a page</span><input type="search" placeholder="Find a page" autocomplete="off" data-filter></label>
+    <nav><div class="side__group"><h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Getting started</h2><ul><li><a href="index.html" aria-current="page" data-title="introduction what zecpy is, who it is for, and what it looks like in code.">Introduction</a></li><li><a href="installation.html" data-title="installation requirements, building from source, and checking the install.">Installation</a></li><li><a href="quickstart.html" data-title="quick start create a wallet, take a payment against an invoice, and send zec, step by step.">Quick start</a></li><li><a href="demo.html" data-title="zecpy live demo a walkthrough page that runs zecpy through five scenes on a real chain and shows every request its light server receives.">ZecPy Live demo</a></li></ul></div><div class="side__group"><h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>Guides</h2><ul><li><a href="accept-payments.html" data-title="accept payments invoices with their own shielded addresses, exactly-once payment events, and a checkout api with signed webhooks.">Accept payments</a></li><li><a href="send-payments.html" data-title="send and batch payouts single payments, up to 50 recipients in one transaction, payroll from a csv, and broadcast delays.">Send and batch payouts</a></li><li><a href="fees-and-sweeps.html" data-title="preview fees and sweep plan a payment before building it, send exactly what was shown, and empty a wallet with nothing left behind.">Preview fees and sweep</a></li><li><a href="cold-signing.html" data-title="cold signing run the online server with a viewing key only; sign on an offline machine with zecpy-cold.">Cold signing</a></li><li><a href="agent-payments.html" data-title="agent payments let a bot or ai agent pay zip-321 links within a hard budget it cannot be talked out of.">Agent payments</a></li><li><a href="memos-and-history.html" data-title="memos and history read transaction history locally, and fetch received memos only when you opt in, among decoys and over tor.">Memos and history</a></li><li><a href="devnet.html" data-title="local devnet a private regtest chain (zebrad and lightwalletd) for development, tests and the demo.">Local devnet</a></li></ul></div><div class="side__group"><h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Concepts</h2><ul><li><a href="privacy.html" data-title="privacy model what a light server can learn from a zecpy wallet, how that is measured, and what is still visible.">Privacy model</a></li><li><a href="architecture.html" data-title="how it works a python api over a rust core over librustzcash, a sync loop of its own, and the leak-audit proxy that measures it.">How it works</a></li></ul></div><div class="side__group"><h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Reference</h2><ul><li><a href="api.html" data-title="api reference every public class, method and field in the zecpy package.">API reference</a></li><li><a href="errors.html" data-title="errors the exception hierarchy, what each one means, and how to handle it.">Errors</a></li><li><a href="cli.html" data-title="command-line tools zecpy-cold, the offline signer, and the leak-audit proxy.">Command-line tools</a></li><li><a href="troubleshooting.html" data-title="troubleshooting build problems, tor, testnet funds and devnet quirks.">Troubleshooting</a></li></ul></div><div class="side__group"><h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 13v2M15 13v2"/></svg>AI agents</h2><ul><li><a href="agents.html" data-title="for ai agents machine-readable docs, a brief to paste into an agent&#x27;s instructions, and an agents.md for your repo.">For AI agents</a></li></ul></div></nav>
+  </aside>
+  <main class="article" id="content">
+    <p class="crumbs"><a href="./">Docs</a> <span aria-hidden="true">/</span> Getting started</p>
+    <h1>Introduction</h1>
+    <p class="lede">What ZecPy is, who it is for, and what it looks like in code.</p>
+    <div class="actions">
+      <button class="iconlink" type="button" data-copy-page="index.md"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Copy as Markdown</span></button>
+      <a class="iconlink" href="index.md"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><span>View .md</span></a>
+    </div>
+    <div class="prose">
+<p>ZecPy is a Python SDK for sending and receiving shielded Zcash. It is built for backends,
+bots and AI agents: a shop that takes ZEC, a payroll job, an agent that pays a link it was
+handed. All cryptography, proving and signing happen in
+<a class="ext" href="https://github.com/zcash/librustzcash">librustzcash<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>, called through a Rust extension.
+ZecPy reimplements none of it.</p>
+<p>What sets it apart is what the light server learns. A recording proxy between the wallet
+and its server logged every request across create, sync, receive, restart and send. It
+found <strong>zero requests that identify the wallet</strong>. zcash-devtool, built on the same crates,
+sent 7. zingo-cli sent 71.</p>
+<div class="codeblock" data-ui><div class="codeblock__bar"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Python</span><button class="icon-btn" type="button" data-copy-code aria-label="Copy code"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Copy</span></button></div><pre class="code"><code><span class="k">from</span> zecpy <span class="k">import</span> Wallet
+
+wallet, mnemonic = <span class="k">await</span> Wallet.create(
+    <span class="s">"./shop"</span>, network=<span class="s">"test"</span>, server=<span class="s">"https://testnet.zec.rocks:443"</span>
+)
+invoice = wallet.invoices.create(<span class="n">150_000</span>, <span class="s">"order-77"</span>)   <span class="c"># its own shielded address</span>
+print(invoice.uri)                                       <span class="c"># zcash:...?amount=0.0015</span>
+
+<span class="k">async</span> <span class="k">for</span> event <span class="k">in</span> wallet.invoices.watch(confirmations=<span class="n">3</span>):
+    <span class="k">if</span> event.state == <span class="s">"confirmed"</span> <span class="k">and</span> event.invoice_settled:
+        ship(event.invoice.reference)                    <span class="c"># exactly once, even across restarts</span></code></pre></div>
+<h2 id="what-you-get"><a class="anchor" href="#what-you-get" aria-label="Link to this section"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>What you get</h2>
+<ul>
+<li><strong>Invoices</strong> with their own diversified addresses. Payments are matched during local
+  trial decryption, with no memo and no request to the server.</li>
+<li><strong>Sending</strong>: <code>send</code> and <code>send_many</code> (up to 50 recipients in one transaction), proved and
+  signed on your machine.</li>
+<li><strong>Fee previews</strong>: <code>propose</code> shows the fee, the notes spent and the change before anything
+  is built.</li>
+<li><strong>Cold signing</strong>: a server that holds only a viewing key builds and proves the
+  transaction. An offline signer signs it.</li>
+<li><strong>Payment links for agents</strong>: <code>pay(uri, max_zat=...)</code> refuses anything over budget.</li>
+<li><strong>Tor by default</strong>: every sync and every broadcast gets its own isolated circuit, with no
+  direct fallback.</li>
+</ul>
+<h2 id="what-it-refuses-to-do"><a class="anchor" href="#what-it-refuses-to-do" aria-label="Link to this section"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>What it refuses to do</h2>
+<p>Transparent recipients raise <code>PrivacyError</code> unless you opt in. ZecPy does not look up
+transactions by txid, watch the mempool, or receive to transparent addresses. Memos are
+opt-in, and each one is fetched among decoys. The <a href="privacy.html">privacy model</a> explains
+each choice.</p>
+<h2 id="where-to-go-next"><a class="anchor" href="#where-to-go-next" aria-label="Link to this section"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>Where to go next</h2>
+<ul>
+<li><a href="installation.html">Installation</a>: build it from source in about 11 minutes.</li>
+<li><a href="quickstart.html">Quick start</a>: create a wallet, take a payment, send one.</li>
+<li><a href="demo.html">ZecPy Live</a>: watch the server's side of a real run.</li>
+<li><a href="agents.html">For AI agents</a>: llms.txt, llms-full.txt and a brief to paste.</li>
+</ul>
+    </div>
+    <nav class="pager" aria-label="Previous and next"><span></span><a class="pager__next" href="installation.html"><span class="pager__dir">Next<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="pager__title">Installation</span></a></nav>
+  </main>
+  <nav class="toc" aria-label="On this page">
+    <h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg>On this page</h2><ul><li><a href="#what-you-get">What you get</a></li><li><a href="#what-it-refuses-to-do">What it refuses to do</a></li><li><a href="#where-to-go-next">Where to go next</a></li></ul>
+  </nav>
+</div>
+<script src="../assets/js/docs.js"></script>
+</body>
+</html>

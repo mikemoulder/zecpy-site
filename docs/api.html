@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API reference · ZecPy docs</title>
+  <meta name="description" content="Every public class, method and field in the zecpy package.">
+  <link rel="alternate" type="text/markdown" href="api.md">
+  <link rel="describedby" type="text/plain" href="../llms.txt">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@900&family=Red+Hat+Text:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body class="docs">
+<a class="skip" href="#content">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="topbar__brand" href="../">ZecPy</a><a class="topbar__section" href="./">Docs</a>
+  <nav class="topbar__links" aria-label="Site">
+    <a class="iconlink" href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3l9 8M5 9.5V21h14V9.5"/></svg><span>Home</span></a>
+    <a class="iconlink" href="demo.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg><span>Demo</span></a>
+    <a class="iconlink" href="../llms.txt"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 13v2M15 13v2"/></svg><span>llms.txt</span></a>
+    <a class="iconlink" href="https://github.com/xerodahdev/zecpy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg><span>GitHub</span></a>
+  </nav>
+  <button class="icon-btn topbar__menu" type="button" aria-expanded="false" aria-controls="side"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menu</span></button>
+</header>
+<div class="docs__frame">
+  <aside class="side" id="side" aria-label="Docs">
+    <label class="side__search"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="sr-only">Find a page</span><input type="search" placeholder="Find a page" autocomplete="off" data-filter></label>
+    <nav><div class="side__group"><h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Getting started</h2><ul><li><a href="index.html" data-title="introduction what zecpy is, who it is for, and what it looks like in code.">Introduction</a></li><li><a href="installation.html" data-title="installation requirements, building from source, and checking the install.">Installation</a></li><li><a href="quickstart.html" data-title="quick start create a wallet, take a payment against an invoice, and send zec, step by step.">Quick start</a></li><li><a href="demo.html" data-title="zecpy live demo a walkthrough page that runs zecpy through five scenes on a real chain and shows every request its light server receives.">ZecPy Live demo</a></li></ul></div><div class="side__group"><h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>Guides</h2><ul><li><a href="accept-payments.html" data-title="accept payments invoices with their own shielded addresses, exactly-once payment events, and a checkout api with signed webhooks.">Accept payments</a></li><li><a href="send-payments.html" data-title="send and batch payouts single payments, up to 50 recipients in one transaction, payroll from a csv, and broadcast delays.">Send and batch payouts</a></li><li><a href="fees-and-sweeps.html" data-title="preview fees and sweep plan a payment before building it, send exactly what was shown, and empty a wallet with nothing left behind.">Preview fees and sweep</a></li><li><a href="cold-signing.html" data-title="cold signing run the online server with a viewing key only; sign on an offline machine with zecpy-cold.">Cold signing</a></li><li><a href="agent-payments.html" data-title="agent payments let a bot or ai agent pay zip-321 links within a hard budget it cannot be talked out of.">Agent payments</a></li><li><a href="memos-and-history.html" data-title="memos and history read transaction history locally, and fetch received memos only when you opt in, among decoys and over tor.">Memos and history</a></li><li><a href="devnet.html" data-title="local devnet a private regtest chain (zebrad and lightwalletd) for development, tests and the demo.">Local devnet</a></li></ul></div><div class="side__group"><h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Concepts</h2><ul><li><a href="privacy.html" data-title="privacy model what a light server can learn from a zecpy wallet, how that is measured, and what is still visible.">Privacy model</a></li><li><a href="architecture.html" data-title="how it works a python api over a rust core over librustzcash, a sync loop of its own, and the leak-audit proxy that measures it.">How it works</a></li></ul></div><div class="side__group"><h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Reference</h2><ul><li><a href="api.html" aria-current="page" data-title="api reference every public class, method and field in the zecpy package.">API reference</a></li><li><a href="errors.html" data-title="errors the exception hierarchy, what each one means, and how to handle it.">Errors</a></li><li><a href="cli.html" data-title="command-line tools zecpy-cold, the offline signer, and the leak-audit proxy.">Command-line tools</a></li><li><a href="troubleshooting.html" data-title="troubleshooting build problems, tor, testnet funds and devnet quirks.">Troubleshooting</a></li></ul></div><div class="side__group"><h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 13v2M15 13v2"/></svg>AI agents</h2><ul><li><a href="agents.html" data-title="for ai agents machine-readable docs, a brief to paste into an agent&#x27;s instructions, and an agents.md for your repo.">For AI agents</a></li></ul></div></nav>
+  </aside>
+  <main class="article" id="content">
+    <p class="crumbs"><a href="./">Docs</a> <span aria-hidden="true">/</span> Reference</p>
+    <h1>API reference</h1>
+    <p class="lede">Every public class, method and field in the zecpy package.</p>
+    <div class="actions">
+      <button class="iconlink" type="button" data-copy-page="api.md"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Copy as Markdown</span></button>
+      <a class="iconlink" href="api.md"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><span>View .md</span></a>
+    </div>
+    <div class="prose">
+<p>Amounts are integers in zatoshis (1 ZEC = 100,000,000). Methods marked <strong>local</strong> send
+nothing to the server. Everything that touches the network is <code>async</code>.</p>
+<p>The privacy flags on paying methods default to off, and both refusals raise
+<code>PrivacyError</code>:</p>
+<ul>
+<li><code>allow_transparent=False</code>: pay a transparent-only recipient.</li>
+<li><code>allow_pool_crossing=False</code>: move value between shielded pools in public.</li>
+</ul>
+<h2 id="wallet"><a class="anchor" href="#wallet" aria-label="Link to this section"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>Wallet</h2>
+<h3 id="walletcreate">Wallet.create</h3>
+<div class="codeblock" data-ui><div class="codeblock__bar"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Python</span><button class="icon-btn" type="button" data-copy-code aria-label="Copy code"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Copy</span></button></div><pre class="code"><code><span class="k">await</span> Wallet.create(path, *, network, server, tor=<span class="k">True</span>, regtest_heights=<span class="k">None</span>)
+    -&gt; tuple[Wallet, Mnemonic]</code></pre></div>
+<p>Creates a wallet directory with a fresh 24-word seed. <code>network</code> is <code>"main"</code>, <code>"test"</code> or
+<code>"regtest"</code>. The mnemonic is returned once and stored nowhere. Raises <code>FileExistsError</code> if
+a wallet already exists at <code>path</code>.</p>
+<h3 id="walletrestore">Wallet.restore</h3>
+<div class="codeblock" data-ui><div class="codeblock__bar"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Python</span><button class="icon-btn" type="button" data-copy-code aria-label="Copy code"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Copy</span></button></div><pre class="code"><code><span class="k">await</span> Wallet.restore(path, mnemonic, *, network, server, birthday=<span class="k">None</span>, tor=<span class="k">True</span>,
+                     regtest_heights=<span class="k">None</span>) -&gt; Wallet</code></pre></div>
+<p>Recreates a wallet from its mnemonic. Without <code>birthday</code> it scans the whole chain.</p>
+<h3 id="walletwatch">Wallet.watch</h3>
+<div class="codeblock" data-ui><div class="codeblock__bar"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Python</span><button class="icon-btn" type="button" data-copy-code aria-label="Copy code"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Copy</span></button></div><pre class="code"><code><span class="k">await</span> Wallet.watch(path, bundle, *, server, birthday=<span class="k">None</span>, tor=<span class="k">True</span>,
+                   regtest_heights=<span class="k">None</span>) -&gt; Wallet</code></pre></div>
+<p>A watch-only wallet from a <code>WatchBundle</code> or its JSON. It syncs, reports balances, issues
+invoices and builds unsigned transactions, but cannot spend.</p>
+<h3 id="walletopen">Wallet.open</h3>
+<div class="codeblock" data-ui><div class="codeblock__bar"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Python</span><button class="icon-btn" type="button" data-copy-code aria-label="Copy code"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Copy</span></button></div><pre class="code"><code>Wallet.open(path, *, server, mnemonic=<span class="k">None</span>, tor=<span class="k">True</span>) -&gt; Wallet</code></pre></div>
+<p>Opens an existing wallet directory. Without the mnemonic it is watch-only. A mnemonic that
+does not belong to the wallet raises <code>PrivacyError</code>.</p>
+<h3 id="properties">Properties</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td><code>Path</code></td>
+<td>The wallet directory</td>
+</tr>
+<tr>
+<td><code>network</code></td>
+<td><code>str</code></td>
+<td><code>"main"</code>, <code>"test"</code> or <code>"regtest"</code></td>
+</tr>
+<tr>
+<td><code>can_send</code></td>
+<td><code>bool</code></td>
+<td>False for watch-only wallets</td>
+</tr>
+<tr>
+<td><code>invoices</code></td>
+<td><code>Invoices</code></td>
+<td>The invoice book, stored in <code>invoices.db</code></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="chain-and-state">Chain and state</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>await sync()</code></td>
+<td><code>int</code></td>
+<td>Scans to the tip; returns the synced height</td>
+</tr>
+<tr>
+<td><code>balance()</code></td>
+<td><code>Balance</code></td>
+<td>Local</td>
+</tr>
+<tr>
+<td><code>address()</code></td>
+<td><code>str</code></td>
+<td>Local; a fresh Unified Address with shielded receivers only</td>
+</tr>
+<tr>
+<td><code>transactions(since=0)</code></td>
+<td><code>list[Transaction]</code></td>
+<td>Local; newest first</td>
+</tr>
+<tr>
+<td><code>transaction(txid)</code></td>
+<td><code>Transaction</code> or <code>None</code></td>
+<td>Local</td>
+</tr>
+<tr>
+<td><code>await fetch_memos(*, decoys=7, max_delay=10.0)</code></td>
+<td><code>MemoReport</code></td>
+<td>Opt-in; Tor; see <a href="memos-and-history.html">Memos</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="paying">Paying</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>await send(to, amount_zat, memo=None, *, flags, max_broadcast_delay=0.0)</code></td>
+<td>txid</td>
+<td></td>
+</tr>
+<tr>
+<td><code>await send_many(payments, *, flags, max_broadcast_delay=0.0)</code></td>
+<td>txid</td>
+<td>Up to 50 <code>Payout</code>s or tuples</td>
+</tr>
+<tr>
+<td><code>propose(to, amount_zat, memo=None, *, flags)</code></td>
+<td><code>Proposal</code></td>
+<td>Local</td>
+</tr>
+<tr>
+<td><code>propose_many(payments, *, flags)</code></td>
+<td><code>Proposal</code></td>
+<td>Local</td>
+</tr>
+<tr>
+<td><code>propose_sweep(to, memo=None, *, mode="spendable", flags)</code></td>
+<td><code>Proposal</code></td>
+<td>Local; <code>mode</code> is <code>"spendable"</code> or <code>"everything"</code></td>
+</tr>
+<tr>
+<td><code>await send_proposal(proposal, *, max_broadcast_delay=0.0)</code></td>
+<td>txid</td>
+<td>Sends exactly that proposal</td>
+</tr>
+<tr>
+<td><code>parse_request(uri)</code></td>
+<td><code>PaymentRequest</code></td>
+<td>Local; ZIP-321</td>
+</tr>
+<tr>
+<td><code>await pay(uri, *, max_zat, flags, max_broadcast_delay=0.0)</code></td>
+<td>txid</td>
+<td><code>max_zat</code> is required</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="cold-signing">Cold signing</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>propose_cold(to, amount_zat, memo=None, *, flags)</code></td>
+<td><code>bytes</code></td>
+<td>An unsigned, proved PCZT</td>
+</tr>
+<tr>
+<td><code>propose_cold_many(payments, *, flags)</code></td>
+<td><code>bytes</code></td>
+<td>Up to 50 recipients</td>
+</tr>
+<tr>
+<td><code>await broadcast_signed(signed_pczt, *, max_broadcast_delay=0.0)</code></td>
+<td>txid</td>
+<td>On its own Tor circuit</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="invoices"><a class="anchor" href="#invoices" aria-label="Link to this section"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>Invoices</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create(amount_zat, reference)</code></td>
+<td><code>Invoice</code></td>
+<td>A fresh shielded address; <code>reference</code> unique</td>
+</tr>
+<tr>
+<td><code>get(invoice_id)</code></td>
+<td><code>Invoice</code></td>
+<td><code>KeyError</code> if missing</td>
+</tr>
+<tr>
+<td><code>by_reference(reference)</code></td>
+<td><code>Invoice</code></td>
+<td><code>KeyError</code> if missing</td>
+</tr>
+<tr>
+<td><code>status(invoice)</code></td>
+<td><code>InvoiceStatus</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>paid_zat(invoice)</code></td>
+<td><code>int</code></td>
+<td>Confirmed value received</td>
+</tr>
+<tr>
+<td><code>poll(confirmations=3)</code></td>
+<td><code>list[PaymentEvent]</code></td>
+<td>Call after <code>sync()</code></td>
+</tr>
+<tr>
+<td><code>async watch(confirmations=3, poll_interval=10.0)</code></td>
+<td>async iterator of <code>PaymentEvent</code></td>
+<td>Syncs in a loop</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="data-types"><a class="anchor" href="#data-types" aria-label="Link to this section"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>Data types</h2>
+<p><strong>Invoice</strong>: <code>id</code>, <code>reference</code>, <code>amount_zat</code>, <code>address</code>, <code>created_at</code>, and <code>uri</code>, a ZIP-321
+URI.</p>
+<p><strong>PaymentEvent</strong>: <code>state</code> (<code>"detected"</code>, <code>"confirmed"</code> or <code>"reverted"</code>), <code>invoice</code>, <code>txid</code>,
+<code>pool</code>, <code>value_zat</code>, <code>height</code>, <code>confirmations</code>, <code>invoice_paid_zat</code>, and <code>invoice_settled</code>.</p>
+<p><strong>InvoiceStatus</strong>: <code>invoice</code>, <code>state</code> (<code>"unpaid"</code>, <code>"pending"</code>, <code>"partial"</code> or <code>"paid"</code>),
+<code>confirmed_zat</code>, <code>pending_zat</code>.</p>
+<p><strong>Balance</strong>: <code>total</code>, <code>spendable</code>, <code>pending</code>, <code>sapling</code>, <code>orchard</code>, <code>ironwood</code>,
+<code>chain_tip</code>, <code>scanned_height</code>.</p>
+<p><strong>Transaction</strong>: <code>txid</code>, <code>status</code>, <code>mined_height</code>, <code>confirmations</code>, <code>block_time</code>,
+<code>expiry_height</code>, <code>net_value</code>, <code>fee</code>, <code>pool_crossing_value</code>, <code>memo_count</code>, <code>memo_pending</code>,
+<code>outputs</code>.</p>
+<p><strong>TxOutput</strong>: <code>pool</code>, <code>output_index</code>, <code>direction</code>, <code>value</code>, <code>address</code>, <code>diversifier_index</code>,
+<code>memo</code>, <code>memo_bytes</code>. The repr hides memo contents.</p>
+<p><strong>Proposal</strong>: <code>fee</code>, <code>paying_out</code>, <code>payments</code>, <code>spends</code>, <code>change</code>, <code>crossing_value</code>,
+<code>canonical_crossing</code>, <code>target_height</code>.</p>
+<p><strong>PaymentRequest</strong>: <code>payments</code> as <code>(address, amount_zat, label, message, has_memo)</code> tuples,
+and <code>total</code>.</p>
+<p><strong>MemoReport</strong>: <code>fetched</code>, <code>waiting</code>, <code>unavailable</code>.</p>
+<p><strong>Payout</strong>: <code>Payout(address, amount_zat, memo=None)</code>, a frozen dataclass.</p>
+<p><strong>Mnemonic</strong>: prints as <code>Mnemonic(&lt;24 words, hidden&gt;)</code>; <code>reveal()</code> returns the phrase.</p>
+<h2 id="coldsigner"><a class="anchor" href="#coldsigner" aria-label="Link to this section"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>ColdSigner</h2>
+<div class="codeblock" data-ui><div class="codeblock__bar"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Python</span><button class="icon-btn" type="button" data-copy-code aria-label="Copy code"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Copy</span></button></div><pre class="code"><code>ColdSigner(mnemonic, *, network, account=<span class="n">0</span>, regtest_heights=<span class="k">None</span>)
+ColdSigner.generate(*, network, account=<span class="n">0</span>, regtest_heights=<span class="k">None</span>) -&gt; (ColdSigner, Mnemonic)</code></pre></div>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>watch_bundle()</code></td>
+<td><code>WatchBundle</code></td>
+<td>For <code>Wallet.watch</code></td>
+</tr>
+<tr>
+<td><code>inspect(pczt)</code></td>
+<td><code>Summary</code></td>
+<td>Spending, outputs with change found by key, fee</td>
+</tr>
+<tr>
+<td><code>sign(pczt)</code></td>
+<td><code>bytes</code></td>
+<td>Refuses a PCZT that spends nothing of this signer's</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>WatchBundle</strong>: <code>network</code>, <code>ufvk</code>, <code>seed_fingerprint</code>, <code>account</code>; <code>to_json()</code> and
+<code>WatchBundle.from_json(text)</code>. It cannot spend but reveals the account's history.</p>
+<h2 id="errors"><a class="anchor" href="#errors" aria-label="Link to this section"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>Errors</h2>
+<p>See <a href="errors.html">Errors</a>.</p>
+    </div>
+    <nav class="pager" aria-label="Previous and next"><a class="pager__prev" href="architecture.html"><span class="pager__dir"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><span class="pager__title">How it works</span></a><a class="pager__next" href="errors.html"><span class="pager__dir">Next<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="pager__title">Errors</span></a></nav>
+  </main>
+  <nav class="toc" aria-label="On this page">
+    <h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg>On this page</h2><ul><li><a href="#wallet">Wallet</a></li><li><a href="#invoices">Invoices</a></li><li><a href="#data-types">Data types</a></li><li><a href="#coldsigner">ColdSigner</a></li><li><a href="#errors">Errors</a></li></ul>
+  </nav>
+</div>
+<script src="../assets/js/docs.js"></script>
+</body>
+</html>
