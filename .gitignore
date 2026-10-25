@@ -1,0 +1,7 @@
+# Working files of the design skill (screenshots, direction sheet)
+.taste-skill/
+# The design-taste-frontend skill is installed locally, not shipped with the site
+.claude/
+__pycache__/
+.venv/
+.env*
