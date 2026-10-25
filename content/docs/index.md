@@ -53,7 +53,7 @@ each choice.
 
 ## Where to go next
 
-- [Installation](installation.html): build it from source in about 11 minutes.
+- [Installation](installation.html): `pip install zecpy` on Linux and macOS.
 - [Quick start](quickstart.html): create a wallet, take a payment, send one.
 - [ZecPy Live](demo.html): watch the server's side of a real run.
 - [For AI agents](agents.html): llms.txt, llms-full.txt and a brief to paste.
