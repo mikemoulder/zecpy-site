@@ -7,7 +7,7 @@ Amounts are integers in zatoshis (1 ZEC = 100,000,000). Every network call is as
 ## Getting started
 
 - [Introduction](docs/index.md): What ZecPy is, who it is for, and what it looks like in code.
-- [Installation](docs/installation.md): Requirements, building from source, and checking the install.
+- [Installation](docs/installation.md): One pip install on Linux and macOS, or a build from source.
 - [Quick start](docs/quickstart.md): Create a wallet, take a payment against an invoice, and send ZEC, step by step.
 - [ZecPy Live demo](docs/demo.md): A walkthrough page that runs ZecPy through five scenes on a real chain and shows every request its light server receives.
 
