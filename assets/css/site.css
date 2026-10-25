@@ -156,6 +156,22 @@ p code, li code, td code { background: var(--surface-2); padding: 0.08em 0.3em; 
 .stat--ours { background: var(--field-1-ink); color: var(--field-1); }
 .stat--ours dt { color: var(--accent); }
 
+.testnet { grid-column: 1 / -1; grid-row: 3; display: grid; grid-template-columns: minmax(12rem, 4fr) 6fr auto; align-items: center; gap: var(--gutter); margin-top: var(--gutter); padding: 1rem 1.25rem; background: var(--field-1-ink); color: var(--field-1); text-decoration: none; transition: background-color var(--t-hover) ease; }
+.testnet__where { font-weight: 500; color: var(--accent); }
+.testnet__fact { max-width: 70ch; }
+.testnet__go { display: inline-flex; align-items: center; gap: 0.5rem; white-space: nowrap; }
+.testnet__go .icon { transition: transform var(--t-ui) var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .testnet:hover { background: #000; } .testnet:hover .testnet__go .icon { transform: translateX(4px); } }
+
+/* ---------- fixed upstream ---------- */
+.upstream__list { display: grid; gap: 0.5rem; }
+.upstream__list li { display: flex; justify-content: space-between; align-items: center; gap: var(--gutter); padding: 0.9rem 1rem 0.9rem 1.25rem; background: var(--surface); }
+.upstream__what { display: flex; flex-direction: column; gap: 0.2rem; color: var(--muted); }
+.upstream__what strong { font-weight: 500; color: var(--ink); }
+.upstream__links { display: flex; flex-wrap: wrap; gap: 0.25rem; justify-content: flex-end; }
+.upstream__links .iconlink { background: var(--surface-2); font-size: var(--step-small); }
+@media (hover: hover) and (pointer: fine) { .upstream__links .iconlink:hover { background: var(--accent); color: var(--accent-ink); } }
+
 /* ---------- see it run ---------- */
 .demo__grid { align-items: start; }
 .demo__copy { grid-column: 1 / 5; }
@@ -272,7 +288,7 @@ p code, li code, td code { background: var(--surface-2); padding: 0.08em 0.3em; 
 
 /* ---------- tablet ---------- */
 @media (max-width: 68.74em) {
-  .measured__copy, .stats, .measured__link { grid-row: auto; }
+  .measured__copy, .stats, .measured__link, .testnet { grid-row: auto; }
   .section__head h2, .section__head p, .measured__copy, .stats, .measured__link, .demo__copy, .demo__video,
   .refuse__grid h2, .refuse__list, .slip-copy, .agents__copy, .agents__brief { grid-column: 1 / -1; }
   .section__head p { margin-top: 0.75rem; }
@@ -298,6 +314,9 @@ p code, li code, td code { background: var(--surface-2); padding: 0.08em 0.3em; 
 
   .stat { padding: 0.9rem 0.9rem 0.75rem; }
   .stat dd { font-size: 3.5rem; }
+  .testnet { grid-template-columns: 1fr; gap: 0.5rem; }
+  .upstream__list li { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+  .upstream__links { justify-content: flex-start; }
   .demo__shots { row-gap: 1.5rem; }
   .demo__shots figure:first-child, .demo__shots figure:last-child { grid-column: 1 / -1; }
   .demo__shots figure:last-child img { width: 60%; }

@@ -35,6 +35,7 @@ Amounts are integers in zatoshis (1 ZEC = 100,000,000). Every network call is as
 ## Optional
 
 - [Privacy model](docs/privacy.md): What a light server can learn from a ZecPy wallet, how that is measured, and what is still visible.
+- [Testnet run](docs/testnet-run.md): A full merchant run on public testnet, every request the shop sent recorded on its way to the server over Tor.
 - [How it works](docs/architecture.md): A Python API over a Rust core over librustzcash, a sync loop of its own, and the leak-audit proxy that measures it.
 - [Source code](https://github.com/xerodahdev/zecpy): the SDK, examples, tests and the leak-audit proxy
 - [ZecPy Live](https://github.com/xerodahdev/zecpy-demo): the demo page and its recorded run

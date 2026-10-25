@@ -42,6 +42,14 @@ over Tor; neither is visible to a loopback proxy, so both were measured without 
 zingo-cli and zcash-devtool can receive to transparent addresses, and asking about those
 addresses is how a light wallet finds such funds. ZecPy is shielded-only by design.
 
+### On public testnet, over Tor
+
+The same audit ran against `testnet.zec.rocks`, with the proxy reaching the server only
+over Tor. It covered a full merchant run: a watch-only shop paid by zcash-devtool, a memo
+read, a refund through the cold signer, and an agent paying a link. Across the shop's 108
+requests, nothing identified it outside the opt-in memo fetch. That fetch hid the real
+payment as the 6th of 8, among 7 other people's transactions. See [Testnet run](testnet-run.md).
+
 ## What ZecPy does differently
 
 | Leak | In a typical light wallet | In ZecPy |

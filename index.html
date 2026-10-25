@@ -53,6 +53,11 @@
         <div class="stat" data-reveal style="--i:2"><dt>zingo-cli</dt><dd class="nums" data-count="71">71</dd></div>
       </dl>
       <a class="iconlink measured__link" href="docs/privacy.html" data-reveal style="--i:2"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>How it is measured</span></a>
+      <a class="testnet" href="docs/testnet-run.html" data-reveal style="--i:3">
+        <span class="testnet__where">Then on public testnet, over Tor</span>
+        <span class="testnet__fact nums">108 requests from the shop. None identified it outside the opt-in memo fetch, which hid the real payment among 7 real ones.</span>
+        <span class="testnet__go"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Read the run</span></span>
+      </a>
     </div>
   </section>
 
@@ -104,6 +109,27 @@
     </div>
     <button class="iconlink log-more" type="button" id="log-more" hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg><span>Show every request</span></button>
     <p class="log-summary" id="log-summary" aria-live="polite">zcash-devtool: <strong>7 identifying</strong> of 24 requests.</p>
+  </section>
+
+  <section class="section wrap upstream" aria-labelledby="fixed">
+    <div class="grid section__head">
+      <h2 id="fixed" class="head" data-reveal>Fixed upstream</h2>
+      <p data-reveal style="--i:1">Building ZecPy found three problems in Zcash's own code. Each is filed with a fix.</p>
+    </div>
+    <ul class="upstream__list">
+      <li data-reveal>
+        <span class="upstream__what"><strong>Syncs reveal where the last one stopped</strong><span>librustzcash links sessions through <code>GetTreeState</code></span></span>
+        <span class="upstream__links"><a class="iconlink" href="https://github.com/zcash/librustzcash/issues/3197"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>#3197</span></a><a class="iconlink" href="https://github.com/zcash/librustzcash/pull/3198"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><span>PR #3198</span></a></span>
+      </li>
+      <li data-reveal style="--i:1">
+        <span class="upstream__what"><strong>A reorg onto a shorter branch goes unnoticed</strong><span>The wallet reported 4 confirmations; the truth was 1</span></span>
+        <span class="upstream__links"><a class="iconlink" href="https://github.com/zcash/librustzcash/pull/3199"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><span>PR #3199</span></a></span>
+      </li>
+      <li data-reveal style="--i:2">
+        <span class="upstream__what"><strong>Cold signing skips Ironwood spends</strong><span>zcash-devtool's <code>pczt sign</code> exits 0, the send fails</span></span>
+        <span class="upstream__links"><a class="iconlink" href="https://github.com/zcash/zcash-devtool/issues/266"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>#266</span></a><a class="iconlink" href="https://github.com/zcash/zcash-devtool/pull/267"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg><span>PR #267</span></a></span>
+      </li>
+    </ul>
   </section>
 
   <section class="section wrap api" aria-labelledby="api">

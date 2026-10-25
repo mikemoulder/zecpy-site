@@ -56,6 +56,7 @@
 .prose a:hover { color: var(--accent); }
 .prose a.ext { display: inline-flex; align-items: baseline; gap: 0.15em; }
 .prose a.ext .icon { width: 0.8em; height: 0.8em; align-self: center; }
+.prose p code, .prose li code { overflow-wrap: anywhere; }
 .prose strong { font-weight: 500; color: var(--accent); }
 .prose img { width: 100%; margin-block: 1.5rem; }
 .prose hr { display: none; }

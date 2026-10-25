@@ -1,7 +1,7 @@
 ---
 title: How it works
 group: Concepts
-order: 2
+order: 3
 description: A Python API over a Rust core over librustzcash, a sync loop of its own, and the leak-audit proxy that measures it.
 ---
 
@@ -38,8 +38,14 @@ batches only at absolute multiples of 1,000. Owning the loop means owning reorgs
 compares block hashes at the tip, and the tests reorganise the chain with
 `invalidateblock`.
 
-Both findings, the session-linking request and a reorg onto a branch that is not yet
-longer going unnoticed, are written up for librustzcash with a tested patch.
+Both findings are filed upstream with fixes: the session-linking request as issue
+[#3197](https://github.com/zcash/librustzcash/issues/3197) with PR
+[#3198](https://github.com/zcash/librustzcash/pull/3198) (absolute batch boundaries), and
+the missed reorg onto a branch that is not yet longer as PR
+[#3199](https://github.com/zcash/librustzcash/pull/3199). The goal is for ZecPy to drop its
+own loop once upstream covers both. A third bug, zcash-devtool's `pczt sign` skipping
+Ironwood spends, is filed as [#266](https://github.com/zcash/zcash-devtool/issues/266) with
+fix [#267](https://github.com/zcash/zcash-devtool/pull/267).
 
 ## Concurrency
 

@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Testnet run · ZecPy docs</title>
+  <meta name="description" content="A full merchant run on public testnet, every request the shop sent recorded on its way to the server over Tor.">
+  <link rel="alternate" type="text/markdown" href="testnet-run.md">
+  <link rel="describedby" type="text/plain" href="../llms.txt">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@900&family=Red+Hat+Text:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body class="docs">
+<a class="skip" href="#content">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="topbar__brand" href="../">ZecPy</a><a class="topbar__section" href="./">Docs</a>
+  <nav class="topbar__links" aria-label="Site">
+    <a class="iconlink" href="../"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 3l9 8M5 9.5V21h14V9.5"/></svg><span>Home</span></a>
+    <a class="iconlink" href="demo.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg><span>Demo</span></a>
+    <a class="iconlink" href="../llms.txt"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 13v2M15 13v2"/></svg><span>llms.txt</span></a>
+    <a class="iconlink" href="https://github.com/xerodahdev/zecpy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg><span>GitHub</span></a>
+  </nav>
+  <button class="icon-btn topbar__menu" type="button" aria-expanded="false" aria-controls="side"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menu</span></button>
+</header>
+<div class="docs__frame">
+  <aside class="side" id="side" aria-label="Docs">
+    <label class="side__search"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="sr-only">Find a page</span><input type="search" placeholder="Find a page" autocomplete="off" data-filter></label>
+    <nav><div class="side__group"><h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Getting started</h2><ul><li><a href="index.html" data-title="introduction what zecpy is, who it is for, and what it looks like in code.">Introduction</a></li><li><a href="installation.html" data-title="installation requirements, building from source, and checking the install.">Installation</a></li><li><a href="quickstart.html" data-title="quick start create a wallet, take a payment against an invoice, and send zec, step by step.">Quick start</a></li><li><a href="demo.html" data-title="zecpy live demo a walkthrough page that runs zecpy through five scenes on a real chain and shows every request its light server receives.">ZecPy Live demo</a></li></ul></div><div class="side__group"><h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>Guides</h2><ul><li><a href="accept-payments.html" data-title="accept payments invoices with their own shielded addresses, exactly-once payment events, and a checkout api with signed webhooks.">Accept payments</a></li><li><a href="send-payments.html" data-title="send and batch payouts single payments, up to 50 recipients in one transaction, payroll from a csv, and broadcast delays.">Send and batch payouts</a></li><li><a href="fees-and-sweeps.html" data-title="preview fees and sweep plan a payment before building it, send exactly what was shown, and empty a wallet with nothing left behind.">Preview fees and sweep</a></li><li><a href="cold-signing.html" data-title="cold signing run the online server with a viewing key only; sign on an offline machine with zecpy-cold.">Cold signing</a></li><li><a href="agent-payments.html" data-title="agent payments let a bot or ai agent pay zip-321 links within a hard budget it cannot be talked out of.">Agent payments</a></li><li><a href="memos-and-history.html" data-title="memos and history read transaction history locally, and fetch received memos only when you opt in, among decoys and over tor.">Memos and history</a></li><li><a href="devnet.html" data-title="local devnet a private regtest chain (zebrad and lightwalletd) for development, tests and the demo.">Local devnet</a></li></ul></div><div class="side__group"><h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Concepts</h2><ul><li><a href="privacy.html" data-title="privacy model what a light server can learn from a zecpy wallet, how that is measured, and what is still visible.">Privacy model</a></li><li><a href="testnet-run.html" aria-current="page" data-title="testnet run a full merchant run on public testnet, every request the shop sent recorded on its way to the server over tor.">Testnet run</a></li><li><a href="architecture.html" data-title="how it works a python api over a rust core over librustzcash, a sync loop of its own, and the leak-audit proxy that measures it.">How it works</a></li></ul></div><div class="side__group"><h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Reference</h2><ul><li><a href="api.html" data-title="api reference every public class, method and field in the zecpy package.">API reference</a></li><li><a href="errors.html" data-title="errors the exception hierarchy, what each one means, and how to handle it.">Errors</a></li><li><a href="cli.html" data-title="command-line tools zecpy-cold, the offline signer, and the leak-audit proxy.">Command-line tools</a></li><li><a href="troubleshooting.html" data-title="troubleshooting build problems, tor, testnet funds and devnet quirks.">Troubleshooting</a></li></ul></div><div class="side__group"><h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 13v2M15 13v2"/></svg>AI agents</h2><ul><li><a href="agents.html" data-title="for ai agents machine-readable docs, a brief to paste into an agent&#x27;s instructions, and an agents.md for your repo.">For AI agents</a></li></ul></div></nav>
+  </aside>
+  <main class="article" id="content">
+    <p class="crumbs"><a href="./">Docs</a> <span aria-hidden="true">/</span> Concepts</p>
+    <h1>Testnet run</h1>
+    <p class="lede">A full merchant run on public testnet, every request the shop sent recorded on its way to the server over Tor.</p>
+    <div class="actions">
+      <button class="iconlink" type="button" data-copy-page="testnet-run.md"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Copy as Markdown</span></button>
+      <a class="iconlink" href="testnet-run.md"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><span>View .md</span></a>
+    </div>
+    <div class="prose">
+<p>On 2026-10-25 ZecPy ran a full merchant story on Zcash testnet against
+<code>testnet.zec.rocks</code>, with real proofs, real blocks and real third-party transactions as
+memo decoys. Every request the shop sent to the light server was recorded by the leak-audit
+proxy, and that proxy reached the server only over Tor. Script:
+<a class="ext" href="https://github.com/xerodahdev/zecpy/blob/main/tools/testnet_run.py"><code>tools/testnet_run.py</code><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>. Raw audit log:
+<a class="ext" href="https://github.com/xerodahdev/zecpy/blob/main/docs/testnet-run/shop-audit.jsonl"><code>docs/testnet-run/shop-audit.jsonl</code><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>.</p>
+<h2 id="setup"><a class="anchor" href="#setup" aria-label="Link to this section"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>Setup</h2>
+<div class="codeblock" data-ui><div class="codeblock__bar"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Text</span><button class="icon-btn" type="button" data-copy-code aria-label="Copy code"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Copy</span></button></div><pre class="code"><code>shop (ZecPy, watch-only) -&gt; audit proxy (loopback, records) -&gt; tunnel -&gt; arti (Tor) -&gt; testnet.zec.rocks
+agent (ZecPy, hot)       -&gt; ZecPy's built-in Tor                                  -&gt; testnet.zec.rocks
+signer (ZecPy)           -&gt; no network
+payer (zcash-devtool)    -&gt; testnet.zec.rocks     (a customer's wallet, another codebase)</code></pre></div>
+<p>The shop holds a viewing key only (<code>can_send=False</code>); its spending key was made offline by
+the signer. The payer was funded with 1 TAZ from a public faucet
+(<code>7cf7c141cde4844868d79c5c83a6189a435c8990fe16c1374c2d5775ac781bf7</code>, block 4,540,684).</p>
+<h2 id="what-happened"><a class="anchor" href="#what-happened" aria-label="Link to this section"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>What happened</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Time (UTC)</th>
+<th>Step</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16:34:58</td>
+<td>Signer generates a seed offline</td>
+<td>no network</td>
+</tr>
+<tr>
+<td>16:35:28</td>
+<td>Shop imports the watch bundle, syncs from a coarsened birthday</td>
+<td>2 coarse tree states at 4,539,999</td>
+</tr>
+<tr>
+<td>16:35:46</td>
+<td>Shop issues invoice 1, 0.25 TAZ, its own diversified address</td>
+<td>no request</td>
+</tr>
+<tr>
+<td>16:36:18</td>
+<td>Payer pays it with a memo, from zcash-devtool</td>
+<td><code>fe0bdcd309662487095fc870dd9a3f95fdf5280005311d12365745ac03ac3f32</code></td>
+</tr>
+<tr>
+<td>16:37:27</td>
+<td>Shop <strong>detects</strong> it, matched by address during trial decryption</td>
+<td>block 4,540,817, Ironwood</td>
+</tr>
+<tr>
+<td>16:38:32</td>
+<td>Shop <strong>confirms</strong> it, invoice settled</td>
+<td>3 confirmations</td>
+</tr>
+<tr>
+<td>16:38:44</td>
+<td>Shop reads the memo with <code>fetch_memos(decoys=7)</code></td>
+<td>8 <code>GetTransaction</code>, 1 real (below)</td>
+</tr>
+<tr>
+<td>16:42:45</td>
+<td>Shop refunds 0.1 TAZ to the agent: proposes and proves a PCZT, the offline signer finds the change with its own key and signs, the shop broadcasts</td>
+<td><code>a0c65fe0160fa97bec30fdf9b8d7274df9d97e8b9959b08944f9b5073d23785d</code>, block 4,540,830, fee 10,000 zat</td>
+</tr>
+<tr>
+<td>16:42:45</td>
+<td>Shop issues a payment link for 0.0125 TAZ and hands it to the agent</td>
+<td>ZIP-321 URI</td>
+</tr>
+<tr>
+<td>16:46:31</td>
+<td>Agent calls <code>pay(link, max_zat=1_000_000)</code>: <strong>refused</strong>, nothing built</td>
+<td><code>PrivacyError</code>: "the request asks for 1250000 zatoshis, more than max_zat=1000000; nothing was built"</td>
+</tr>
+<tr>
+<td>16:46:31</td>
+<td>Agent calls <code>pay(link, max_zat=2_000_000)</code>: paid over its own Tor</td>
+<td><code>9b07a288ffe2c9892ee8cf218b9a4d2c95d44f7865cba18a5a56db0dc583d0aa</code></td>
+</tr>
+<tr>
+<td>16:49:14</td>
+<td>Shop sees the agent's payment at the link's address, confirmed</td>
+<td>block 4,540,842, settled</td>
+</tr>
+</tbody>
+</table></div>
+<p>Fourteen minutes, end to end.</p>
+<h2 id="what-the-server-learned-from-the-shop"><a class="anchor" href="#what-the-server-learned-from-the-shop" aria-label="Link to this section"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>What the server learned from the shop</h2>
+<p>108 requests over the whole run:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Count</th>
+<th>Requests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>97</td>
+<td><code>GetSubtreeRoots</code> 63, <code>GetLatestTreeState</code> 21, <code>GetBlockRange</code> 12, <code>GetLatestBlock</code> 1</td>
+</tr>
+<tr>
+<td>coarse</td>
+<td>2</td>
+<td><code>GetTreeState</code> at 4,539,999: the birthday rounded down to a 10,000-block boundary</td>
+</tr>
+<tr>
+<td>broadcast</td>
+<td>1</td>
+<td><code>SendTransaction</code>: the refund</td>
+</tr>
+<tr>
+<td>identifying</td>
+<td>8</td>
+<td><code>GetTransaction</code>: the opt-in memo fetch</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>No request outside the memo fetch tied anything to the shop.</strong> That covers sync,
+detection, confirmation, the invoices and the cold-signed refund. There was no transparent
+address query, no exact birthday, and no tree state at the height where a previous sync
+stopped. The shop never looked a transaction up by its id, apart from the memo fetch below.</p>
+<h2 id="the-memo-fetch-unmasked"><a class="anchor" href="#the-memo-fetch-unmasked" aria-label="Link to this section"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>The memo fetch, unmasked</h2>
+<p>The audit labels every <code>GetTransaction</code> identifying, because each one names a transaction.
+<code>fetch_memos</code> sends the real one only inside a shuffled set of decoys. Here is what the
+server received, in order, with the real one marked from the wallet's own records:</p>
+<div class="codeblock" data-ui><div class="codeblock__bar"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Text</span><button class="icon-btn" type="button" data-copy-code aria-label="Copy code"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Copy</span></button></div><pre class="code"><code>1  09b379847b46ab62afb34378490ae89317b54cfb88262b8d7b63eeb5aba757bd
+2  b3148a07f52c176b62472e8e8345314ab49fb39203e90a6555d93e5c9b47a8a0
+3  331e3ab821a59c5581482a57dbc648b056e8360ea9315a762fd916656959e827
+4  8daaf062a2cfe539894f64891eb7f97fe7af67d723af32993b49a7f6ddf28032
+5  b3b5968afbc5391c5ecefc46e0a096db7d570a2eaf3d875222dd56567638d159
+6  fe0bdcd309662487095fc870dd9a3f95fdf5280005311d12365745ac03ac3f32   the customer's payment
+7  32ebc13d348f782a773822c21a173d0beb835bd19825ac92bc851e0c9399a53c
+8  148985a5722ac3bb2f434c52938a95957b1cff6919202f7823638d0259a18787</code></pre></div>
+<p>The seven decoys are other people's shielded testnet transactions from nearby blocks, taken
+from compact blocks the shop had already downloaded. None of them belongs to this run.
+Publishing which one was real gives that up for this transaction, which is the point of a
+demonstration on testnet. On a real shop, nobody but the wallet knows.</p>
+<h2 id="what-this-run-does-not-show"><a class="anchor" href="#what-this-run-does-not-show" aria-label="Link to this section"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>What this run does not show</h2>
+<ul>
+<li><strong>The agent's requests were not audited.</strong> It used ZecPy's built-in Tor directly, to show
+  that path with a real send. The audit proxy can only record a wallet that talks to it on
+  loopback.</li>
+<li><strong>Tor hides the network address, not the request content.</strong> The proxy sees content, then
+  forwards it over Tor. The server saw the shop's requests arrive from Tor exits.</li>
+<li><strong>No reorg happened during the run,</strong> and no pool crossing was attempted: testnet funds
+  arrive in Ironwood, as on mainnet since NU6.3.</li>
+</ul>
+    </div>
+    <nav class="pager" aria-label="Previous and next"><a class="pager__prev" href="privacy.html"><span class="pager__dir"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous</span><span class="pager__title">Privacy model</span></a><a class="pager__next" href="architecture.html"><span class="pager__dir">Next<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="pager__title">How it works</span></a></nav>
+  </main>
+  <nav class="toc" aria-label="On this page">
+    <h2><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg>On this page</h2><ul><li><a href="#setup">Setup</a></li><li><a href="#what-happened">What happened</a></li><li><a href="#what-the-server-learned-from-the-shop">What the server learned from the shop</a></li><li><a href="#the-memo-fetch-unmasked">The memo fetch, unmasked</a></li><li><a href="#what-this-run-does-not-show">What this run does not show</a></li></ul>
+  </nav>
+</div>
+<script src="../assets/js/docs.js"></script>
+</body>
+</html>
