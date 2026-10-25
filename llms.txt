@@ -1,0 +1,41 @@
+# ZecPy
+
+> ZecPy is a Python SDK for sending and receiving shielded Zcash, built on librustzcash through a Rust extension. It is private by default: its light server receives no request that identifies the wallet, sends go over Tor, transparent recipients are refused, and payments are matched to invoices by diversified address, not by memo.
+
+Amounts are integers in zatoshis (1 ZEC = 100,000,000). Every network call is async. `PrivacyError` is a deliberate refusal; do not work around it with `allow_transparent` or `allow_pool_crossing` unless the user asked for exactly that. Each link below is a clean Markdown page; llms-full.txt holds all of them in one file.
+
+## Getting started
+
+- [Introduction](docs/index.md): What ZecPy is, who it is for, and what it looks like in code.
+- [Installation](docs/installation.md): Requirements, building from source, and checking the install.
+- [Quick start](docs/quickstart.md): Create a wallet, take a payment against an invoice, and send ZEC, step by step.
+- [ZecPy Live demo](docs/demo.md): A walkthrough page that runs ZecPy through five scenes on a real chain and shows every request its light server receives.
+
+## Guides
+
+- [Accept payments](docs/accept-payments.md): Invoices with their own shielded addresses, exactly-once payment events, and a checkout API with signed webhooks.
+- [Send and batch payouts](docs/send-payments.md): Single payments, up to 50 recipients in one transaction, payroll from a CSV, and broadcast delays.
+- [Preview fees and sweep](docs/fees-and-sweeps.md): Plan a payment before building it, send exactly what was shown, and empty a wallet with nothing left behind.
+- [Cold signing](docs/cold-signing.md): Run the online server with a viewing key only; sign on an offline machine with zecpy-cold.
+- [Agent payments](docs/agent-payments.md): Let a bot or AI agent pay ZIP-321 links within a hard budget it cannot be talked out of.
+- [Memos and history](docs/memos-and-history.md): Read transaction history locally, and fetch received memos only when you opt in, among decoys and over Tor.
+- [Local devnet](docs/devnet.md): A private regtest chain (zebrad and lightwalletd) for development, tests and the demo.
+
+## Reference
+
+- [API reference](docs/api.md): Every public class, method and field in the zecpy package.
+- [Errors](docs/errors.md): The exception hierarchy, what each one means, and how to handle it.
+- [Command-line tools](docs/cli.md): zecpy-cold, the offline signer, and the leak-audit proxy.
+- [Troubleshooting](docs/troubleshooting.md): Build problems, Tor, testnet funds and devnet quirks.
+
+## AI agents
+
+- [For AI agents](docs/agents.md): Machine-readable docs, a brief to paste into an agent's instructions, and an AGENTS.md for your repo.
+
+## Optional
+
+- [Privacy model](docs/privacy.md): What a light server can learn from a ZecPy wallet, how that is measured, and what is still visible.
+- [How it works](docs/architecture.md): A Python API over a Rust core over librustzcash, a sync loop of its own, and the leak-audit proxy that measures it.
+- [Source code](https://github.com/xerodahdev/zecpy): the SDK, examples, tests and the leak-audit proxy
+- [ZecPy Live](https://github.com/xerodahdev/zecpy-demo): the demo page and its recorded run
+- [Everything in one file](llms-full.txt)
