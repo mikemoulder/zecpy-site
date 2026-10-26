@@ -22,6 +22,7 @@ SRC = ROOT / "content" / "docs"
 OUT = ROOT / "docs"
 REPO = "https://github.com/xerodahdev/zecpy"
 DEMO = "https://github.com/xerodahdev/zecpy-demo"
+SITE = "https://zecpy.pages.dev"
 
 GROUPS = ["Getting started", "Guides", "Concepts", "Reference", "AI agents"]
 
@@ -240,15 +241,15 @@ def llms_index(pages: list[Page]) -> str:
         lines.append(f"## {g}\n")
         for p in pages:
             if p.group == g:
-                lines.append(f"- [{p.title}](docs/{p.slug}.md): {p.description}")
+                lines.append(f"- [{p.title}]({SITE}/docs/{p.slug}.md): {p.description}")
         lines.append("")
     lines.append("## Optional\n")
     for p in pages:
         if p.group == "Concepts":
-            lines.append(f"- [{p.title}](docs/{p.slug}.md): {p.description}")
+            lines.append(f"- [{p.title}]({SITE}/docs/{p.slug}.md): {p.description}")
     lines.append(f"- [Source code]({REPO}): the SDK, examples, tests and the leak-audit proxy")
     lines.append(f"- [ZecPy Live]({DEMO}): the demo page and its recorded run")
-    lines.append("- [Everything in one file](llms-full.txt)")
+    lines.append(f"- [Everything in one file]({SITE}/llms-full.txt)")
     return "\n".join(lines) + "\n"
 
 

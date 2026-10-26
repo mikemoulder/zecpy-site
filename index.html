@@ -173,8 +173,8 @@
   <section class="section slip-section wrap" aria-labelledby="start">
     <div class="grid">
       <div class="slip-copy">
-        <h2 id="start" class="head" data-reveal>Clone to paid</h2>
-        <p data-reveal style="--i:1">Linux, Python 3.10+ and Rust. The first build compiles librustzcash once.</p>
+        <h2 id="start" class="head" data-reveal>Install to paid</h2>
+        <p data-reveal style="--i:1"><code>pip install zecpy</code> on Linux or macOS, Python 3.10+. Nothing to compile.</p>
         <pre class="code" data-reveal style="--i:2"><code><span class="k">from</span> zecpy <span class="k">import</span> Wallet
 
 wallet, mnemonic = <span class="k">await</span> Wallet.create(
@@ -188,7 +188,7 @@ invoice = wallet.invoices.create(150_000, <span class="s">"order-77"</span>)
       <div class="slip" data-reveal style="--i:1">
         <h3>Install</h3>
         <ul class="nums">
-          <li><span class="what">uv pip install -e .</span><span class="dots" aria-hidden="true"></span><span class="when">11 min, once</span></li>
+          <li><span class="what">pip install zecpy</span><span class="dots" aria-hidden="true"></span><span class="when">seconds</span></li>
         </ul>
         <h3>Receive</h3>
         <ul class="nums">
@@ -221,7 +221,7 @@ invoice = wallet.invoices.create(150_000, <span class="s">"order-77"</span>)
       <div class="agents__brief" data-ui data-reveal style="--i:1">
         <div class="agents__bar"><span>Agent brief</span><button class="copy-btn" type="button" data-copy="brief"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Copy</span></button></div>
         <pre class="code" id="brief">You are writing Python that uses ZecPy, an SDK for shielded Zcash.
-Reference: llms-full.txt on the ZecPy website.
+Reference: https://zecpy.pages.dev/llms-full.txt
 
 - Network calls are async: await Wallet.create, sync, send, pay.
 - Amounts are integers in zatoshis. 1 ZEC = 100_000_000.

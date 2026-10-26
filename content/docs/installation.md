@@ -9,8 +9,8 @@ description: One pip install on Linux and macOS, or a build from source.
 pip install zecpy
 ```
 
-Prebuilt wheels cover Linux (x86_64, arm64) and macOS (Apple silicon, Intel) on Python 3.10
-or newer. Nothing compiles on your machine: the wheel carries librustzcash, Tor (arti),
+Prebuilt wheels cover Linux x86_64 and macOS on Apple silicon, Python 3.10 or newer. Other
+platforms build from source (below). Nothing compiles on your machine: the wheel carries librustzcash, Tor (arti),
 SQLite and the Sapling proving parameters, and links only the C runtime. Each wheel is
 installed and smoke-tested on its own platform in CI, including a testnet wallet synced
 over Tor.

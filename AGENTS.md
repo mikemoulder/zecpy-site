@@ -1,8 +1,8 @@
 # AGENTS.md: working with ZecPy
 
 Drop this file into a repository that uses ZecPy, a Python SDK for shielded Zcash. Full
-reference: `llms-full.txt` on the ZecPy website, or the `.md` page for each topic under
-`/docs/`.
+reference: https://zecpy.pages.dev/llms-full.txt, or the `.md` page for each topic under
+https://zecpy.pages.dev/docs/.
 
 ## Rules
 

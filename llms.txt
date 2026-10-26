@@ -6,37 +6,37 @@ Amounts are integers in zatoshis (1 ZEC = 100,000,000). Every network call is as
 
 ## Getting started
 
-- [Introduction](docs/index.md): What ZecPy is, who it is for, and what it looks like in code.
-- [Installation](docs/installation.md): One pip install on Linux and macOS, or a build from source.
-- [Quick start](docs/quickstart.md): Create a wallet, take a payment against an invoice, and send ZEC, step by step.
-- [ZecPy Live demo](docs/demo.md): A walkthrough page that runs ZecPy through five scenes on a real chain and shows every request its light server receives.
+- [Introduction](https://zecpy.pages.dev/docs/index.md): What ZecPy is, who it is for, and what it looks like in code.
+- [Installation](https://zecpy.pages.dev/docs/installation.md): One pip install on Linux and macOS, or a build from source.
+- [Quick start](https://zecpy.pages.dev/docs/quickstart.md): Create a wallet, take a payment against an invoice, and send ZEC, step by step.
+- [ZecPy Live demo](https://zecpy.pages.dev/docs/demo.md): A walkthrough page that runs ZecPy through five scenes on a real chain and shows every request its light server receives.
 
 ## Guides
 
-- [Accept payments](docs/accept-payments.md): Invoices with their own shielded addresses, exactly-once payment events, and a checkout API with signed webhooks.
-- [Send and batch payouts](docs/send-payments.md): Single payments, up to 50 recipients in one transaction, payroll from a CSV, and broadcast delays.
-- [Preview fees and sweep](docs/fees-and-sweeps.md): Plan a payment before building it, send exactly what was shown, and empty a wallet with nothing left behind.
-- [Cold signing](docs/cold-signing.md): Run the online server with a viewing key only; sign on an offline machine with zecpy-cold.
-- [Agent payments](docs/agent-payments.md): Let a bot or AI agent pay ZIP-321 links within a hard budget it cannot be talked out of.
-- [Memos and history](docs/memos-and-history.md): Read transaction history locally, and fetch received memos only when you opt in, among decoys and over Tor.
-- [Local devnet](docs/devnet.md): A private regtest chain (zebrad and lightwalletd) for development, tests and the demo.
+- [Accept payments](https://zecpy.pages.dev/docs/accept-payments.md): Invoices with their own shielded addresses, exactly-once payment events, and a checkout API with signed webhooks.
+- [Send and batch payouts](https://zecpy.pages.dev/docs/send-payments.md): Single payments, up to 50 recipients in one transaction, payroll from a CSV, and broadcast delays.
+- [Preview fees and sweep](https://zecpy.pages.dev/docs/fees-and-sweeps.md): Plan a payment before building it, send exactly what was shown, and empty a wallet with nothing left behind.
+- [Cold signing](https://zecpy.pages.dev/docs/cold-signing.md): Run the online server with a viewing key only; sign on an offline machine with zecpy-cold.
+- [Agent payments](https://zecpy.pages.dev/docs/agent-payments.md): Let a bot or AI agent pay ZIP-321 links within a hard budget it cannot be talked out of.
+- [Memos and history](https://zecpy.pages.dev/docs/memos-and-history.md): Read transaction history locally, and fetch received memos only when you opt in, among decoys and over Tor.
+- [Local devnet](https://zecpy.pages.dev/docs/devnet.md): A private regtest chain (zebrad and lightwalletd) for development, tests and the demo.
 
 ## Reference
 
-- [API reference](docs/api.md): Every public class, method and field in the zecpy package.
-- [Errors](docs/errors.md): The exception hierarchy, what each one means, and how to handle it.
-- [Command-line tools](docs/cli.md): zecpy-cold, the offline signer, and the leak-audit proxy.
-- [Troubleshooting](docs/troubleshooting.md): Build problems, Tor, testnet funds and devnet quirks.
+- [API reference](https://zecpy.pages.dev/docs/api.md): Every public class, method and field in the zecpy package.
+- [Errors](https://zecpy.pages.dev/docs/errors.md): The exception hierarchy, what each one means, and how to handle it.
+- [Command-line tools](https://zecpy.pages.dev/docs/cli.md): zecpy-cold, the offline signer, and the leak-audit proxy.
+- [Troubleshooting](https://zecpy.pages.dev/docs/troubleshooting.md): Build problems, Tor, testnet funds and devnet quirks.
 
 ## AI agents
 
-- [For AI agents](docs/agents.md): Machine-readable docs, a brief to paste into an agent's instructions, and an AGENTS.md for your repo.
+- [For AI agents](https://zecpy.pages.dev/docs/agents.md): Machine-readable docs, a brief to paste into an agent's instructions, and an AGENTS.md for your repo.
 
 ## Optional
 
-- [Privacy model](docs/privacy.md): What a light server can learn from a ZecPy wallet, how that is measured, and what is still visible.
-- [Testnet run](docs/testnet-run.md): A full merchant run on public testnet, every request the shop sent recorded on its way to the server over Tor.
-- [How it works](docs/architecture.md): A Python API over a Rust core over librustzcash, a sync loop of its own, and the leak-audit proxy that measures it.
+- [Privacy model](https://zecpy.pages.dev/docs/privacy.md): What a light server can learn from a ZecPy wallet, how that is measured, and what is still visible.
+- [Testnet run](https://zecpy.pages.dev/docs/testnet-run.md): A full merchant run on public testnet, every request the shop sent recorded on its way to the server over Tor.
+- [How it works](https://zecpy.pages.dev/docs/architecture.md): A Python API over a Rust core over librustzcash, a sync loop of its own, and the leak-audit proxy that measures it.
 - [Source code](https://github.com/xerodahdev/zecpy): the SDK, examples, tests and the leak-audit proxy
 - [ZecPy Live](https://github.com/xerodahdev/zecpy-demo): the demo page and its recorded run
-- [Everything in one file](llms-full.txt)
+- [Everything in one file](https://zecpy.pages.dev/llms-full.txt)

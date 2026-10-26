@@ -22,7 +22,7 @@ Paste this into a system prompt or into your agent's instructions:
 
 ```text
 You are writing Python that uses ZecPy, an SDK for shielded Zcash.
-Reference: llms-full.txt on the ZecPy website.
+Reference: https://zecpy.pages.dev/llms-full.txt
 
 - Network calls are async: await Wallet.create, sync, send, pay.
 - Amounts are integers in zatoshis. 1 ZEC = 100_000_000.

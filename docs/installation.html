@@ -42,8 +42,8 @@
     </div>
     <div class="prose">
 <div class="codeblock" data-ui><div class="codeblock__bar"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m4 17 6-6-6-6M12 19h8"/></svg>Shell</span><button class="icon-btn" type="button" data-copy-code aria-label="Copy code"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Copy</span></button></div><pre class="code"><code><span class="k">pip</span> install zecpy</code></pre></div>
-<p>Prebuilt wheels cover Linux (x86_64, arm64) and macOS (Apple silicon, Intel) on Python 3.10
-or newer. Nothing compiles on your machine: the wheel carries librustzcash, Tor (arti),
+<p>Prebuilt wheels cover Linux x86_64 and macOS on Apple silicon, Python 3.10 or newer. Other
+platforms build from source (below). Nothing compiles on your machine: the wheel carries librustzcash, Tor (arti),
 SQLite and the Sapling proving parameters, and links only the C runtime. Each wheel is
 installed and smoke-tested on its own platform in CI, including a testnet wallet synced
 over Tor.</p>
