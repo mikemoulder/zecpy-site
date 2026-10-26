@@ -57,7 +57,7 @@ build.py               Markdown -> docs/*.html, docs/*.md, llms.txt, llms-full.t
 docs/                  generated: never edit by hand
 index.html             the landing page (hand-written)
 assets/css, assets/js  site.css and docs.css on one set of tokens; site.js, docs.js
-assets/js/requests.js generated from the SDK's leak-audit logs (see below)
+assets/js/requests.js  generated from the SDK's leak-audit logs (see below)
 assets/img             screenshots and the recording from ZecPy Live
 AGENTS.md, 404.html, _headers
 deploy.sh              build and publish to Cloudflare Pages
