@@ -127,25 +127,6 @@ document.querySelectorAll("[data-copy]").forEach((btn) => {
 
 const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// The hero ticker: ZecPy's own requests from the audit, and what each told the server.
-(() => {
-  const track = document.getElementById("ticker");
-  if (!track || !window.REQUESTS) return;
-  const learns = { public: "nothing", coarse: "a wide window", broadcast: "a new transaction", identifying: "this wallet" };
-  const items = window.REQUESTS.ZecPy.rows.map(([scenario, method, label, , count]) => {
-    const el = document.createElement("span");
-    el.className = "ticker__item";
-    const m = document.createElement("b");
-    m.textContent = count > 1 ? `${method} \u00d7${count}` : method;
-    const l = document.createElement("i");
-    l.textContent = learns[label];
-    el.append(scenario.replace("-", " "), m, "server learns", l);
-    return el;
-  });
-  // two copies, so the loop wraps without a seam
-  track.append(...items, ...items.map((el) => el.cloneNode(true)));
-})();
-
 // Figures that count up once, when they come into view.
 (() => {
   const figures = document.querySelectorAll("[data-count]");
