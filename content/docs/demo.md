@@ -12,7 +12,7 @@ from.
 
 **Open it in your browser: [zecpy-live.pages.dev](https://zecpy-live.pages.dev).** Press Run
 on a scene, or Run all, to replay the recorded run with its original timing. Source:
-[github.com/xerodahdev/zecpy-demo](https://github.com/xerodahdev/zecpy-demo)
+[github.com/mikemoulder/zecpy-demo](https://github.com/mikemoulder/zecpy-demo)
 
 ![ZecPy Live after all five scenes](../assets/img/zecpy-live.jpg)
 
@@ -34,7 +34,7 @@ the replay file is a recorded run of the same scenes.
 You do not need a chain to see it. Clone the demo next to the SDK and serve the replay:
 
 ```bash
-git clone https://github.com/xerodahdev/zecpy-demo && cd zecpy-demo
+git clone https://github.com/mikemoulder/zecpy-demo && cd zecpy-demo
 source ../zecpy/.venv/bin/activate        # an environment with zecpy and fastapi
 uvicorn demo.server:app --port 8077
 ```

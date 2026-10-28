@@ -33,7 +33,7 @@ anything is built: one bad entry rejects the batch and names its position.
 
 ## Payroll from a CSV
 
-[`examples/payroll.py`](https://github.com/xerodahdev/zecpy/blob/main/examples/payroll.py)
+[`examples/payroll.py`](https://github.com/mikemoulder/zecpy/blob/main/examples/payroll.py)
 pays a CSV in one transaction, from a hot wallet or through a cold signer:
 
 ```text

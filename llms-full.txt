@@ -95,7 +95,7 @@ Only needed on other platforms, or to work on ZecPy itself.
 The first build compiles librustzcash: 11 to 19 minutes on a 4-core machine.
 
 ```bash
-git clone https://github.com/xerodahdev/zecpy && cd zecpy
+git clone https://github.com/mikemoulder/zecpy && cd zecpy
 uv venv .venv && . .venv/bin/activate        # or: python -m venv .venv
 uv pip install -e '.[dev,examples]'
 ```
@@ -267,7 +267,7 @@ from.
 
 **Open it in your browser: [zecpy-live.pages.dev](https://zecpy-live.pages.dev).** Press Run
 on a scene, or Run all, to replay the recorded run with its original timing. Source:
-[github.com/xerodahdev/zecpy-demo](https://github.com/xerodahdev/zecpy-demo)
+[github.com/mikemoulder/zecpy-demo](https://github.com/mikemoulder/zecpy-demo)
 
 ![ZecPy Live after all five scenes](../assets/img/zecpy-live.jpg)
 
@@ -289,7 +289,7 @@ the replay file is a recorded run of the same scenes.
 You do not need a chain to see it. Clone the demo next to the SDK and serve the replay:
 
 ```bash
-git clone https://github.com/xerodahdev/zecpy-demo && cd zecpy-demo
+git clone https://github.com/mikemoulder/zecpy-demo && cd zecpy-demo
 source ../zecpy/.venv/bin/activate        # an environment with zecpy and fastapi
 uvicorn demo.server:app --port 8077
 ```
@@ -384,7 +384,7 @@ status.confirmed_zat, status.pending_zat
 ## A checkout API with no spending key
 
 The SDK repo ships a one-file FastAPI service,
-[`examples/checkout`](https://github.com/xerodahdev/zecpy/tree/main/examples/checkout).
+[`examples/checkout`](https://github.com/mikemoulder/zecpy/tree/main/examples/checkout).
 The server imports a watch bundle (viewing key only), so a compromised server cannot
 spend. Refunds go out as PCZTs for the [cold signer](cold-signing.md).
 
@@ -450,7 +450,7 @@ anything is built: one bad entry rejects the batch and names its position.
 
 ## Payroll from a CSV
 
-[`examples/payroll.py`](https://github.com/xerodahdev/zecpy/blob/main/examples/payroll.py)
+[`examples/payroll.py`](https://github.com/mikemoulder/zecpy/blob/main/examples/payroll.py)
 pays a CSV in one transaction, from a hot wallet or through a cold signer:
 
 ```text
@@ -894,8 +894,8 @@ On 2026-10-25 ZecPy ran a full merchant story on Zcash testnet against
 `testnet.zec.rocks`, with real proofs, real blocks and real third-party transactions as
 memo decoys. Every request the shop sent to the light server was recorded by the leak-audit
 proxy, and that proxy reached the server only over Tor. Script:
-[`tools/testnet_run.py`](https://github.com/xerodahdev/zecpy/blob/main/tools/testnet_run.py). Raw audit log:
-[`docs/testnet-run/shop-audit.jsonl`](https://github.com/xerodahdev/zecpy/blob/main/docs/testnet-run/shop-audit.jsonl).
+[`tools/testnet_run.py`](https://github.com/mikemoulder/zecpy/blob/main/tools/testnet_run.py). Raw audit log:
+[`docs/testnet-run/shop-audit.jsonl`](https://github.com/mikemoulder/zecpy/blob/main/docs/testnet-run/shop-audit.jsonl).
 
 ## Setup
 

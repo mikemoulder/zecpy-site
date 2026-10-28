@@ -13,14 +13,14 @@
   <a href="https://zecpy.pages.dev/docs/">Docs</a> ·
   <a href="https://zecpy.pages.dev/docs/quickstart">Quick start</a> ·
   <a href="https://zecpy.pages.dev/llms.txt">llms.txt</a> ·
-  <a href="https://github.com/xerodahdev/zecpy">ZecPy SDK</a> ·
+  <a href="https://github.com/mikemoulder/zecpy">ZecPy SDK</a> ·
   <a href="https://zecpy-live.pages.dev">Live demo</a>
 </p>
 
 ---
 
 **This is the source of [zecpy.pages.dev](https://zecpy.pages.dev), the home of
-[ZecPy](https://github.com/xerodahdev/zecpy): private Zcash payments for Python.** It holds
+[ZecPy](https://github.com/mikemoulder/zecpy): private Zcash payments for Python.** It holds
 the landing page, the documentation, and a second, plain-text edition of the same docs for
 language models and coding agents. Static files, no framework, no analytics.
 
@@ -121,12 +121,12 @@ Nothing on the site is invented.
 
 | Repository | What it is |
 |---|---|
-| [**zecpy**](https://github.com/xerodahdev/zecpy) | The Python SDK: `pip install zecpy` |
+| [**zecpy**](https://github.com/mikemoulder/zecpy) | The Python SDK: `pip install zecpy` |
 | **zecpy-site** | This repository: the website and docs |
-| [**zecpy-demo**](https://github.com/xerodahdev/zecpy-demo) | ZecPy Live, at [zecpy-live.pages.dev](https://zecpy-live.pages.dev) |
+| [**zecpy-demo**](https://github.com/mikemoulder/zecpy-demo) | ZecPy Live, at [zecpy-live.pages.dev](https://zecpy-live.pages.dev) |
 
 Corrections to the docs are welcome as issues or pull requests. Contributions follow the SDK's
-[contributing guide](https://github.com/xerodahdev/zecpy/blob/main/CONTRIBUTING.md).
+[contributing guide](https://github.com/mikemoulder/zecpy/blob/main/CONTRIBUTING.md).
 
 ## License
 

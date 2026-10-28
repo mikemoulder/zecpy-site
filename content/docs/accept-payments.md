@@ -62,7 +62,7 @@ status.confirmed_zat, status.pending_zat
 ## A checkout API with no spending key
 
 The SDK repo ships a one-file FastAPI service,
-[`examples/checkout`](https://github.com/xerodahdev/zecpy/tree/main/examples/checkout).
+[`examples/checkout`](https://github.com/mikemoulder/zecpy/tree/main/examples/checkout).
 The server imports a watch bundle (viewing key only), so a compromised server cannot
 spend. Refunds go out as PCZTs for the [cold signer](cold-signing.html).
 

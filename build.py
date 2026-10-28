@@ -20,8 +20,8 @@ import markdown
 ROOT = Path(__file__).parent
 SRC = ROOT / "content" / "docs"
 OUT = ROOT / "docs"
-REPO = "https://github.com/xerodahdev/zecpy"
-DEMO = "https://github.com/xerodahdev/zecpy-demo"
+REPO = "https://github.com/mikemoulder/zecpy"
+DEMO = "https://github.com/mikemoulder/zecpy-demo"
 SITE = "https://zecpy.pages.dev"
 
 GROUPS = ["Getting started", "Guides", "Concepts", "Reference", "AI agents"]

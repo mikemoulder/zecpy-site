@@ -30,7 +30,7 @@ Only needed on other platforms, or to work on ZecPy itself.
 The first build compiles librustzcash: 11 to 19 minutes on a 4-core machine.
 
 ```bash
-git clone https://github.com/xerodahdev/zecpy && cd zecpy
+git clone https://github.com/mikemoulder/zecpy && cd zecpy
 uv venv .venv && . .venv/bin/activate        # or: python -m venv .venv
 uv pip install -e '.[dev,examples]'
 ```

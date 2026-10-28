@@ -9,8 +9,8 @@ On 2026-10-25 ZecPy ran a full merchant story on Zcash testnet against
 `testnet.zec.rocks`, with real proofs, real blocks and real third-party transactions as
 memo decoys. Every request the shop sent to the light server was recorded by the leak-audit
 proxy, and that proxy reached the server only over Tor. Script:
-[`tools/testnet_run.py`](https://github.com/xerodahdev/zecpy/blob/main/tools/testnet_run.py). Raw audit log:
-[`docs/testnet-run/shop-audit.jsonl`](https://github.com/xerodahdev/zecpy/blob/main/docs/testnet-run/shop-audit.jsonl).
+[`tools/testnet_run.py`](https://github.com/mikemoulder/zecpy/blob/main/tools/testnet_run.py). Raw audit log:
+[`docs/testnet-run/shop-audit.jsonl`](https://github.com/mikemoulder/zecpy/blob/main/docs/testnet-run/shop-audit.jsonl).
 
 ## Setup
 
