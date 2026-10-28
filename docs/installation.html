@@ -43,10 +43,10 @@
     <div class="prose">
 <div class="codeblock" data-ui><div class="codeblock__bar"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m4 17 6-6-6-6M12 19h8"/></svg>Shell</span><button class="icon-btn" type="button" data-copy-code aria-label="Copy code"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span>Copy</span></button></div><pre class="code"><code><span class="k">pip</span> install zecpy</code></pre></div>
 <p>Prebuilt wheels cover Linux x86_64 and macOS on Apple silicon, Python 3.10 or newer. Other
-platforms build from source (below). Nothing compiles on your machine: the wheel carries librustzcash, Tor (arti),
-SQLite and the Sapling proving parameters, and links only the C runtime. Each wheel is
-installed and smoke-tested on its own platform in CI, including a testnet wallet synced
-over Tor.</p>
+platforms build from source (below). On supported platforms, installation does not compile
+code locally: the wheel carries librustzcash, Tor (arti), SQLite and the Sapling proving
+parameters, and links only the C runtime. Each wheel is installed and smoke-tested on its
+own platform in CI, including a testnet wallet synced over Tor.</p>
 <h2 id="requirements-for-a-source-build"><a class="anchor" href="#requirements-for-a-source-build" aria-label="Link to this section"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></a>Requirements for a source build</h2>
 <p>Only needed on other platforms, or to work on ZecPy itself.</p>
 <div class="table-wrap"><table>

@@ -10,10 +10,10 @@ pip install zecpy
 ```
 
 Prebuilt wheels cover Linux x86_64 and macOS on Apple silicon, Python 3.10 or newer. Other
-platforms build from source (below). Nothing compiles on your machine: the wheel carries librustzcash, Tor (arti),
-SQLite and the Sapling proving parameters, and links only the C runtime. Each wheel is
-installed and smoke-tested on its own platform in CI, including a testnet wallet synced
-over Tor.
+platforms build from source (below). On supported platforms, installation does not compile
+code locally: the wheel carries librustzcash, Tor (arti), SQLite and the Sapling proving
+parameters, and links only the C runtime. Each wheel is installed and smoke-tested on its
+own platform in CI, including a testnet wallet synced over Tor.
 
 ## Requirements for a source build
 
